@@ -4,6 +4,7 @@
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/)
 
 # Cypress Cucumber Step Definition Generator
 
@@ -17,19 +18,20 @@ Get it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com
 
 ## Features
 
-- [Generate step definition](#generate-step-definition)
-- Language support
-  - JavaScript
-  - TypeScript
+-   [Generate step definition](#generate-step-definition)
+-   Language support
+    -   JavaScript
+    -   TypeScript
 
 ## Generate step definition
 
 ![Generate step definition](images/generate-step-definitions-in-editor.gif)
 
 Different options available to Generate the Step Definition:
-- Generate step definition with creating a new file automatically as instructed by cypress-cucumber-preprocessor plugin.
-- Generate step definition for the selected step(s) in Clipboard
-- Generate step from Command Palette
+
+-   Generate step definition with creating a new file automatically as instructed by cypress-cucumber-preprocessor plugin.
+-   Generate step definition for the selected step(s) in Clipboard
+-   Generate step from Command Palette
 
 ## Using the extension
 
@@ -51,11 +53,12 @@ Different options available to Generate the Step Definition:
 ![Generate step definition](images/generate-step-definitions-to-clipboard.gif)
 
 ### Generate step from Command Palette
+
 ![Generate step definition](images/generate-step-definitions-from-cmd.png)
 
 ## Examples
 
-````feature
+```feature
 Feature: Calculator
     As a user
     I want to use a calculator to add numbers
@@ -70,9 +73,9 @@ Feature: Calculator
         Given I have a calculator
         When I add "10" and "15"
         Then the result should be "25"
-````
+```
 
-````typescript
+```typescript
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
 Given(`I have a calculator`, () => {
@@ -86,10 +89,13 @@ When(`I add {string} and {string}`, (arg1: string, arg2: string) => {
 Then(`the result should be {string}`, (arg1: string) => {
     // The use of 'Then' keyword is to see the outcome after the action in when step.
 });
-````
-
+```
 
 ## Feedback
 
 If you discover a bug, or have a suggestion for a feature request, please
 submit an [issue](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/issues).
+
+## LICENSE
+
+This extension is licensed under the [MIT License](LICENSE)
