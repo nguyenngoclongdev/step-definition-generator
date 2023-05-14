@@ -1,20 +1,19 @@
 [![CI](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/actions/workflows/pipelines.yml)
 
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyengoclong.cypress-cucumber-step-definition-generator)
-![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyengoclong.cypress-cucumber-step-definition-generator)
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyengoclong.cypress-cucumber-step-definition-generator)
-![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyengoclong.cypress-cucumber-step-definition-generator)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyenngoclong.cypress-cucumber-step-definition-generator)
+![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)
 
 # Cypress Cucumber Step Definition Generator
 
 This extension allows to generate automatically the step definitions of the gherkin steps of a feature and copy them to the clipboard or export them to file, powered by the [Gherkin](https://github.com/cucumber/gherkin).
 
-This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyengoclongdev/).
+This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyenngoclongdev/).
 
 # Installation
 
-Get it from the [Open VSX Registry](https://open-vsx.org/extension/nguyengoclong/cypress-cucumber-step-definition-generator) or
-[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyengoclong.cypress-cucumber-step-definition-generator).
+Get it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
 
 ## Features
 
