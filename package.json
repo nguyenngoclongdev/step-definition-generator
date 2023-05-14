@@ -3,8 +3,8 @@
     "displayName": "Cypress Cucumber Step Definition Generator",
     "description": "Generate step definitions for cypress-cucumber-preprocessor",
     "icon": "images/cycucum.png",
-    "version": "1.0.1",
-    "main": "./out/extension.js",
+    "version": "1.0.5",
+    "main": "./dist/extension.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator"
@@ -53,7 +53,10 @@
         }
     },
     "scripts": {
-        "vscode:prepublish": "yarn compile",
+        "vscode:prepublish": "yarn esbuild-base -- --minify",
+        "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+        "esbuild": "yarn esbuild-base -- --sourcemap",
+        "esbuild-watch": "yarn esbuild-base -- --sourcemap --watch",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "lint": "eslint src --ext ts",
@@ -75,7 +78,8 @@
         "eslint": "^8.40.0",
         "glob": "^10.2.3",
         "mocha": "^10.2.0",
-        "typescript": "^5.0.4"
+        "typescript": "^5.0.4",
+        "esbuild": "^0.17.19"
     },
     "dependencies": {
         "fs": "0.0.1-security",
