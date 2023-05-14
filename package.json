@@ -50,6 +50,30 @@
                     "title": "Cycucum: Generate step definitions to file"
                 }
             ]
+        },
+        "configuration": {
+            "title": "Cycucum",
+            "properties": {
+                "cycucum.language": {
+                    "type": "string",
+                    "default": "typescript",
+                    "enum": [
+                        "typescript",
+                        "javascript"
+                    ],
+                     "description": "The language of step deinitions."
+                },
+                "cycucum.feature": {
+                    "type": "string",
+                    "default": "feature",
+                    "description": "The cycucum.feature setting overrides where the extension should look for .feature files."
+                },
+                "cycucum.destination": {
+                    "type": "string",
+                    "default": "./",
+                    "description": "Relative path to generate step deinitions. (e.g. src/step-deinitions)"
+                }
+            }
         }
     },
     "scripts": {
