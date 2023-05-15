@@ -1,6 +1,3 @@
 {
-	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"korostylov.gherkin-highlight"
-	]
+    "recommendations": ["dbaeumer.vscode-eslint"]
 }

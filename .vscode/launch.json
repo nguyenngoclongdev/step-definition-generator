@@ -5,9 +5,9 @@
             "name": "Run Extension",
             "type": "extensionHost",
             "request": "launch",
-			"runtimeExecutable": "${execPath}",
+            "runtimeExecutable": "${execPath}",
             "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
-			"sourceMaps": true,
+            "sourceMaps": true,
             "outFiles": ["${workspaceFolder}/dist/**/*.js"],
             "preLaunchTask": "${defaultBuildTask}"
         }

@@ -16,6 +16,6 @@
     "prettier.printWidth": 120,
     "prettier.trailingComma": "none",
     "[feature]": {
-        "editor.defaultFormatter": "korostylov.gherkin-highlight"
+        "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
     }
 }
