@@ -9,8 +9,24 @@
         "type": "git",
         "url": "https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator"
     },
+    "bugs": {
+        "url": "https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/issues"
+    },
+    "sponsor": {
+        "url": "https://www.paypal.me/longnguyenngoc"
+    },
     "categories": [
         "Testing"
+    ],
+    "keywords": [
+        "cypress",
+        "cucumber",
+        "generate",
+        "generator",
+        "step",
+        "definition",
+        "feature",
+        "gherkin"
     ],
     "contributes": {
         "commands": [
@@ -61,7 +77,7 @@
                         "typescript",
                         "javascript"
                     ],
-                     "description": "The language of step deinitions."
+                    "description": "The language of step deinitions."
                 },
                 "cycucum.feature": {
                     "type": "string",
