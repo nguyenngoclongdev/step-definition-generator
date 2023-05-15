@@ -11,6 +11,9 @@ export const getStepRegex = (type: PickleStepType | undefined, text: string): Re
     // - Given(`I execute before step`, ()
     // - Given('I execute before step', ()
     // - Given("I execute before step", ()
+    // - Given(
+    //    "I execute before step", ()
     const stepInfo = getStepInfo(type);
-    return new RegExp(stepInfo.method + '\\x28[`\x27"]' + text + '[`\x27"], \x28.*?\x29');
+    const nl = '(|[ ]+)(|\n)(|[ ]+)'; // space and new line
+    return new RegExp(stepInfo.method + '\\x28' + nl + '[`\x27"]' + text + '[`\x27"],' + nl + '\x28.*?\x29');
 };
