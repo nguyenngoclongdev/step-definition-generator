@@ -3,12 +3,15 @@ import { IdGenerator } from '@cucumber/messages';
 import { readFileSync } from 'fs';
 import * as vscode from 'vscode';
 import { TextEditor } from 'vscode';
+import { CycucumConfiguration } from '../interfaces/Config.interface';
 import { Pickle, PickleArg, PickleStep } from '../interfaces/Pickle.interface';
 
 export class FeatureProcessor {
     private readonly uri: vscode.Uri;
-    constructor(uri: vscode.Uri) {
+    private readonly config: CycucumConfiguration;
+    constructor(uri: vscode.Uri, config: CycucumConfiguration) {
         this.uri = uri;
+        this.config = config;
     }
 
     private getActiveTextEditor = (): TextEditor => {

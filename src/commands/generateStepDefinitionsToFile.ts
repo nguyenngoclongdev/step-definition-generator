@@ -1,8 +1,10 @@
 import * as fs from 'fs';
 import * as vscode from 'vscode';
+import { CycucumConfiguration } from '../interfaces/Config.interface';
 import { FeatureProcessor } from '../services/FeatureProcessor';
 import StepDefinitions from '../services/StepDefinition';
-import { CYPRESS_CUCUMBER_PREPROCESSOR, getStepRegex } from '../services/StepTemplate';
+import { CYPRESS_CUCUMBER_PREPROCESSOR } from '../utils/getStepInfo';
+import { getStepRegex } from '../utils/getStepRegex';
 import path = require('path');
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
@@ -29,14 +31,14 @@ const getStepDefinitionPath = (uri: vscode.Uri): string => {
     return '';
 };
 
-export const generateStepDefinitionsToFile = async (uri: vscode.Uri): Promise<void> => {
+export const generateStepDefinitionsToFile = async (uri: vscode.Uri, config: CycucumConfiguration): Promise<void> => {
     try {
         // Parse feature content
-        const featureProcessor = new FeatureProcessor(uri);
+        const featureProcessor = new FeatureProcessor(uri, config);
         const content = featureProcessor.parseFeatureContent();
 
         // Generate code and write to file
-        const stepDefinitions = new StepDefinitions(uri);
+        const stepDefinitions = new StepDefinitions(uri, config);
         const stepDefinitionFilePath = getStepDefinitionPath(uri);
         if (fs.existsSync(stepDefinitionFilePath)) {
             // Remove duplicates

@@ -7,9 +7,15 @@ const toCamelCase = (input: string): string => {
         .replace(/\s+/g, '');
 };
 
-export const toArgument = (args?: PickleArg[]) => {
+export const toArgument = (args: PickleArg[] | undefined, withType: boolean = true) => {
     if (!args || args.length <= 0) {
         return '';
     }
-    return args?.map(({ name, type }) => `${toCamelCase(name)}: ${type}`).join(', ');
+
+    return args?.map(({ name, type }) => {
+        if (!withType) {
+            return `${toCamelCase(name)}`;
+        }
+        return `${toCamelCase(name)}: ${type}`;
+    }).join(', ');
 };
