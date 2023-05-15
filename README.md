@@ -91,6 +91,17 @@ Then(`the result should be {string}`, (arg1: string) => {
 });
 ```
 
+## Configuration
+
+You could change the default language to generate:
+
+```json
+{
+    "cycucum.language": "typescript"
+}
+```
+For the default language: It should be set with language id defined in VS Code. The languages you could set are `javascript`, `typescript`.
+
 ## Feedback
 
 If you discover a bug, or have a suggestion for a feature request, please
