@@ -1,5 +1,6 @@
 .github
 .vscode
+.vscode-test/**
 logo.logoist
 cypress-test
 node_modules

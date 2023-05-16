@@ -4,3 +4,5 @@ node_modules
 .vscode-test/
 *.vsix
 cypress-test/
+yarn-error.log
+**/.DS_Store

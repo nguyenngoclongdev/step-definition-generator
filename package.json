@@ -109,7 +109,10 @@
         "deploy": "vsce publish --yarn",
         "pree2e": "code --uninstall-extension nguyenngoclong.cypress-cucumber-step-definition-generator || true",
         "e2e": "vsce package -o ./cycucum.vsix",
-        "poste2e": "code --install-extension ./cycucum.vsix"
+        "poste2e": "code --install-extension ./cycucum.vsix",
+        "pretest": "yarn esbuild && yarn lint",
+        "test": "node ./dist/test/runTest.js",
+        "posttest": "rm -rf .vscode-test/user-data"
     },
     "engines": {
         "vscode": "^1.78.0"
@@ -125,7 +128,8 @@
         "eslint": "^8.40.0",
         "glob": "^10.2.3",
         "mocha": "^10.2.0",
-        "typescript": "^5.0.4"
+        "typescript": "^5.0.4",
+        "@vscode/test-electron": "^2.3.0"
     },
     "dependencies": {
         "@cucumber/gherkin": "^26.2.0",
