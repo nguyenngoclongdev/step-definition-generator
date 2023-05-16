@@ -42,7 +42,7 @@ export const generateStepDefinitionsToFile = async (uri: vscode.Uri, config: Cyc
         const stepDefinitionFilePath = getStepDefinitionPath(uri);
         if (fs.existsSync(stepDefinitionFilePath)) {
             // Remove duplicates
-            const stepDefinitionFileContent = fs.readFileSync(stepDefinitionFilePath, 'utf-8').trim();
+            const stepDefinitionFileContent = fs.readFileSync(stepDefinitionFilePath, 'utf-8');
             if (stepDefinitionFileContent) {
                 content.map((pickle) => {
                     pickle.steps = pickle.steps.filter((pickleStep) => {

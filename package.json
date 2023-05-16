@@ -26,7 +26,8 @@
         "step",
         "definition",
         "feature",
-        "gherkin"
+        "gherkin",
+        "playwright"
     ],
     "contributes": {
         "commands": [

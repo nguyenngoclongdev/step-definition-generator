@@ -3,9 +3,7 @@ import { LanguageTemplate } from '../../interfaces/Template.interface';
 import { toArgument } from '../../utils/toArgument';
 
 export class JSTemplate implements LanguageTemplate {
-    getImportCode = (library: string) => `
-var { Given, When, Then } = require('${library}');
-`;
+    getImportCode = (library: string) => `var { Given, When, Then } = require('${library}');`;
 
     // FEATURE
     // The file should have extension .feature and each feature file should have only one feature.

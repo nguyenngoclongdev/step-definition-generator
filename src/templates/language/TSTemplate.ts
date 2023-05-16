@@ -3,9 +3,7 @@ import { LanguageTemplate } from '../../interfaces/Template.interface';
 import { toArgument } from '../../utils/toArgument';
 
 export class TSTemplate implements LanguageTemplate {
-    getImportCode = (library: string) => `
-import { Given, When, Then } from '${library}';
-`;
+    getImportCode = (library: string) => `import { Given, When, Then } from '${library}';`;
 
     // FEATURE
     // The file should have extension .feature and each feature file should have only one feature.

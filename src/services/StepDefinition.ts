@@ -1,6 +1,7 @@
+import { EOL } from 'os';
 import * as vscode from 'vscode';
-import { Pickle } from '../interfaces/Pickle.interface';
 import { CycucumConfiguration } from '../interfaces/Config.interface';
+import { Pickle } from '../interfaces/Pickle.interface';
 import { StepTemplate } from '../templates/StepTemplate';
 
 export default class StepDefinition {
@@ -13,7 +14,7 @@ export default class StepDefinition {
 
     generate = async (pickles: readonly Pickle[], includeImport: boolean = true): Promise<string> => {
         const stepTemplate = new StepTemplate(this.config);
-        const output: string[] = includeImport ? [stepTemplate.getImport()] : [`\n`];
+        const output: string[] = includeImport ? [stepTemplate.getImport().concat(EOL)] : [];
         pickles?.forEach((pickle) => {
             pickle.steps?.forEach((pickleStep) => {
                 const { type, text, args } = pickleStep;

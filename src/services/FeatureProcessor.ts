@@ -56,7 +56,6 @@ export class FeatureProcessor {
             // Generate new argument
             let args: PickleArg[] = [];
             for (let i = 1; i <= matches.length; i++) {
-                // const arg = matches[i].trim().slice(1, -1);
                 args.push({
                     name: `arg${i}`,
                     type: 'string',
