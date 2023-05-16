@@ -30,29 +30,27 @@ Get it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com
 Different options available to Generate the Step Definition:
 
 -   Generate step definition with creating a new file automatically as instructed by cypress-cucumber-preprocessor plugin.
--   Generate step definition for the selected step(s) in Clipboard
--   Generate step from Command Palette
+-   Generate step definition and copy to clipboard
+-   Generate step definition from Command Palette
 
 ## Using the extension
 
 ### Generate step definition with creating a new file automatically as instructed by cypress-cucumber-preprocessor plugin.
 
 1. Open any .feature file in vs code editor
-2. Select the step(s) which needs to generate step definition(s)
-3. Right click on the editor and select `Cycucum: Generate step definitions to file`
-4. Extension create the required folder structure i.e. folder with feature file name and then ts file under that folder if folder doesn't exists, otherwise append the existing step definition js file if already exits.
+2. Right click on the editor and select `Cycucum: Generate step definitions to file`
+3. Extension create the required folder structure i.e. folder with feature file name and then ts file under that folder if folder doesn't exists, otherwise append the existing step definition js file if already exits.
 
 ![Generate step definition](images/generate-step-definitions-in-explorer.gif)
 
-### Generate step definition for the selected step(s) in Clipboard
+### Generate step definition and copy to clipboard
 
 1. Open any .feature file in vs code editor
-2. Select the step(s) which needs to generate step definition(s)
-3. Right click on the editor and select `Cycucum: Generate step definitions to clipboard`
+2. Right click on the editor and select `Cycucum: Generate step definitions to clipboard`
 
 ![Generate step definition](images/generate-step-definitions-to-clipboard.gif)
 
-### Generate step from Command Palette
+### Generate step definition from Command Palette
 
 ![Generate step definition](images/generate-step-definitions-from-cmd.png)
 
@@ -93,6 +91,10 @@ Then(`the result should be {string}`, (arg1: string) => {
 
 ## Configuration
 
+![Configuration](images/configuration.png)
+
+### Change the default language
+
 You could change the default language to generate:
 
 ```json
@@ -101,6 +103,14 @@ You could change the default language to generate:
 }
 ```
 For the default language: It should be set with language id defined in VS Code. The languages you could set are `javascript`, `typescript`.
+
+### Change the import library
+
+```json
+{
+    "cycucum.import": "@badeball/cypress-cucumber-preprocessor"
+}
+```
 
 ## Feedback
 

@@ -3,9 +3,9 @@ import * as vscode from 'vscode';
 import { CycucumConfiguration } from '../interfaces/Config.interface';
 import { FeatureProcessor } from '../services/FeatureProcessor';
 import StepDefinitions from '../services/StepDefinition';
-import { CYPRESS_CUCUMBER_PREPROCESSOR } from '../utils/getStepInfo';
 import { getStepRegex } from '../utils/getStepRegex';
 import path = require('path');
+import { getImportLibrary } from '../utils/getImportLibrary';
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
     const dirPath = path.dirname(stepDefinitionFilePath);
@@ -53,7 +53,8 @@ export const generateStepDefinitionsToFile = async (uri: vscode.Uri, config: Cyc
                 });
             }
 
-            const isIncludeImport = !stepDefinitionFileContent.includes(CYPRESS_CUCUMBER_PREPROCESSOR);
+            const importLibrary = getImportLibrary(config);
+            const isIncludeImport = !stepDefinitionFileContent.includes(importLibrary);
             const output = await stepDefinitions.generate(content, isIncludeImport);
             appendFile(stepDefinitionFilePath, output);
         } else {

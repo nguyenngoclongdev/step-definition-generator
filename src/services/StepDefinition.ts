@@ -12,7 +12,7 @@ export default class StepDefinition {
     }
 
     generate = async (pickles: readonly Pickle[], includeImport: boolean = true): Promise<string> => {
-        const stepTemplate = new StepTemplate(this.config.language);
+        const stepTemplate = new StepTemplate(this.config);
         const output: string[] = includeImport ? [stepTemplate.getImport()] : [`\n`];
         pickles?.forEach((pickle) => {
             pickle.steps?.forEach((pickleStep) => {

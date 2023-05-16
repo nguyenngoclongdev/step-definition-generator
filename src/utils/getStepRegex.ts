@@ -1,6 +1,5 @@
-import { PickleArg, PickleStepType } from '../interfaces/Pickle.interface';
-import { LanguageTemplate } from '../interfaces/Template.interface';
-import { CYPRESS_CUCUMBER_PREPROCESSOR, getStepInfo } from '../utils/getStepInfo';
+import { PickleStepType } from '../interfaces/Pickle.interface';
+import { getStepInfo } from '../utils/getStepInfo';
 
 export const getStepRegex = (type: PickleStepType | undefined, text: string): RegExp | undefined => {
     if (!type || type === PickleStepType.UNKNOWN) {

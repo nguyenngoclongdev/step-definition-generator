@@ -84,9 +84,14 @@
                     "default": "feature",
                     "description": "The cycucum.feature setting overrides where the extension should look for .feature files."
                 },
+                "cycucum.import": {
+                    "type": "string",
+                    "default": "@badeball/cypress-cucumber-preprocessor",
+                    "description": "The library using to import Given When Then after generated code. (e.g. @badeball/cypress-cucumber-preprocessor)"
+                },
                 "cycucum.destination": {
                     "type": "string",
-                    "default": "./",
+                    "default": "",
                     "description": "Relative path to generate step deinitions. (e.g. src/step-deinitions)"
                 }
             }

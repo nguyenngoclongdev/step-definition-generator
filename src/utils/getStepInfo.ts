@@ -1,7 +1,5 @@
 import { PickleStepType, StepCodeInfo, StepCodeMethod } from '../interfaces/Pickle.interface';
 
-export const CYPRESS_CUCUMBER_PREPROCESSOR = '@badeball/cypress-cucumber-preprocessor';
-
 export const getStepInfo = (type: PickleStepType): StepCodeInfo => {
     switch (type) {
         case PickleStepType.CONTEXT: {
