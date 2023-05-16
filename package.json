@@ -3,7 +3,7 @@
     "displayName": "Cypress Cucumber Step Definition Generator",
     "description": "Generate step definitions for cypress-cucumber-preprocessor",
     "icon": "images/cycucum.png",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "main": "./dist/extension.js",
     "repository": {
         "type": "git",
