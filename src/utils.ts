@@ -1,4 +1,4 @@
-import { SupportedLanguage, SupportedRunner } from "@nguyenngoclongdev/cucumber-gherkin";
+import { SupportedLanguage, SupportedRunner } from "@nguyenngoclongdev/gherkin";
 import { readFileSync } from 'fs';
 import * as vscode from 'vscode';
 import { TextEditor } from 'vscode';

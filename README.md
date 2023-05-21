@@ -1,4 +1,4 @@
-[![CI](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml)
+[![CI](https://github.com/nguyenngoclongdev/step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/step-definition-generator/actions/workflows/pipelines.yml)
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
@@ -82,25 +82,25 @@ You have multiple options when it comes to generating step definition using this
 
 ### Change the default language
 
-1. Open settings and search for "cucumber-step-definition-generator.language"
+1. Open settings and search for "step-definition-generator.language"
 2. Set the value to "javascript" or "typescript"
 3. Save the settings
 
 ```json
 {
-    "cucumber-step-definition-generator.language": "typescript"
+    "step-definition-generator.language": "typescript"
 }
 ```
 
 ### Change the testing framework
 
-1. Open settings and search for "cucumber-step-definition-generator.runner"
+1. Open settings and search for "step-definition-generator.runner"
 2. Set the value to "cypress", "playwright", or "cucumberjs"
 3. Save the settings
 
 ```json
 {
-    "cucumber-step-definition-generator.runner": "cypress"
+    "step-definition-generator.runner": "cypress"
 }
 ```
 
@@ -305,7 +305,7 @@ Then(`I should see the home page with no search results displayed`, () => {
 I hope you find this extension useful for your testing projects, and I welcome any feedback or contributions to help make it even better.
 
 If you discover a bug, or have a suggestion for a feature request, please
-submit an [issue](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/issues).
+submit an [issue](https://github.com/nguyenngoclongdev/step-definition-generator/issues).
 
 ## LICENSE
 

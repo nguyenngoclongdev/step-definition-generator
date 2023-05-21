@@ -199,10 +199,10 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@nguyenngoclongdev/cucumber-gherkin@1.2.0":
-  version "1.2.0"
-  resolved "https://npm.pkg.github.com/download/@nguyenngoclongdev/cucumber-gherkin/1.2.0/83d5572f82cf224e7198663dcbe7e722ae8484e6#83d5572f82cf224e7198663dcbe7e722ae8484e6"
-  integrity sha512-kSZK4/FVwQVX6PT7yloArsxdDdVhBqS3DA9VRHyUstMN4ZFkVkYAZ5yhG+VPsijZ3nh4fQX6JypA/+3MHgwXNw==
+"@nguyenngoclongdev/gherkin@1.2.1":
+  version "1.2.1"
+  resolved "https://npm.pkg.github.com/download/@nguyenngoclongdev/gherkin/1.2.1/93a0034fc4dcdc206ed9a8e4c832eef8cc03d6c5#93a0034fc4dcdc206ed9a8e4c832eef8cc03d6c5"
+  integrity sha512-jSkaah8I/DiLI17yr5HhQl+rBdwTWvng+kF4Ew4LrjjzrUsJhFouas5P26gJtWDtGrR4AD2SwZPRT5KFV9ogOg==
   dependencies:
     "@cucumber/cucumber-expressions" "^16.1.2"
     "@cucumber/gherkin" "^26.2.0"

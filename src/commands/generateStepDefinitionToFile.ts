@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as vscode from 'vscode';
 import path = require('path');
-import { GherkinCodeParse } from '@nguyenngoclongdev/cucumber-gherkin';
+import { GherkinCodeParse } from '@nguyenngoclongdev/gherkin';
 import { getFeatureContent, getLanguage, getRunner } from '../utils';
 import { ExtensionConfiguration } from '../extension';
 

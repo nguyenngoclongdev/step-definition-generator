@@ -1,4 +1,4 @@
-import { GherkinCodeParse } from '@nguyenngoclongdev/cucumber-gherkin';
+import { GherkinCodeParse } from '@nguyenngoclongdev/gherkin';
 import * as vscode from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureContent, getLanguage, getRunner } from '../utils';

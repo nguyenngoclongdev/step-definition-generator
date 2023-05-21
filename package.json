@@ -1,16 +1,16 @@
 {
     "name": "cypress-cucumber-step-definition-generator",
     "displayName": "Cucumber Step Definition Generator ",
-    "description": "Generate step definition for multiple frameworks, such as Cypress, Playwright, and Cucumberjs. Powered by Gherkin Syntax",
+    "description": "Generate step definition for multiple frameworks, such as Cypress, Playwright, and Cucumberjs. Powered by Gherkin Syntax.",
     "icon": "images/step-definition-generator.png",
     "version": "2.0.3",
     "main": "./dist/extension.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nguyenngoclongdev/cucumber-step-definition-generator"
+        "url": "https://github.com/nguyenngoclongdev/step-definition-generator"
     },
     "bugs": {
-        "url": "https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/issues"
+        "url": "https://github.com/nguyenngoclongdev/step-definition-generator/issues"
     },
     "sponsor": {
         "url": "https://www.paypal.me/longnguyenngoc"
@@ -36,12 +36,12 @@
         "commands": [
             {
                 "when": "resourceLangId == feature",
-                "command": "cucumber-step-definition-generator.generateStepDefinitionToClipboard",
+                "command": "step-definition-generator.generateStepDefinitionToClipboard",
                 "title": "Generate step definition to clipboard"
             },
             {
                 "when": "resourceLangId == feature",
-                "command": "cucumber-step-definition-generator.generateStepDefinitionToFile",
+                "command": "step-definition-generator.generateStepDefinitionToFile",
                 "title": "Generate step definition to file"
             }
         ],
@@ -49,32 +49,32 @@
             "explorer/context": [
                 {
                     "when": "resourceExtname == .feature",
-                    "command": "cucumber-step-definition-generator.generateStepDefinitionToClipboard",
+                    "command": "step-definition-generator.generateStepDefinitionToClipboard",
                     "title": "Generate step definition to clipboard"
                 },
                 {
                     "when": "resourceExtname == .feature",
-                    "command": "cucumber-step-definition-generator.generateStepDefinitionToFile",
+                    "command": "step-definition-generator.generateStepDefinitionToFile",
                     "title": "Generate step definition to file"
                 }
             ],
             "editor/context": [
                 {
                     "when": "resourceExtname == .feature",
-                    "command": "cucumber-step-definition-generator.generateStepDefinitionToClipboard",
+                    "command": "step-definition-generator.generateStepDefinitionToClipboard",
                     "title": "Generate step definition to clipboard"
                 },
                 {
                     "when": "resourceExtname == .feature",
-                    "command": "cucumber-step-definition-generator.generateStepDefinitionToFile",
+                    "command": "step-definition-generator.generateStepDefinitionToFile",
                     "title": "Generate step definition to file"
                 }
             ]
         },
         "configuration": {
-            "title": "cucumber-step-definition-generator",
+            "title": "step-definition-generator",
             "properties": {
-                "cucumber-step-definition-generator.runner": {
+                "step-definition-generator.runner": {
                     "type": "string",
                     "default": "cypress",
                     "enum": [
@@ -84,7 +84,7 @@
                     ],
                     "description": "BDD Testing Framework"
                 },
-                "cucumber-step-definition-generator.language": {
+                "step-definition-generator.language": {
                     "type": "string",
                     "default": "typescript",
                     "enum": [
@@ -106,8 +106,8 @@
         "lint": "eslint src --ext ts",
         "deploy": "vsce publish --yarn",
         "pree2e": "code --uninstall-extension nguyenngoclong.cypress-cucumber-step-definition-generator || true",
-        "e2e": "vsce package -o ./cucumber-step-definition-generator.vsix",
-        "poste2e": "code --install-extension ./cucumber-step-definition-generator.vsix"
+        "e2e": "vsce package -o ./cypress-cucumber-step-definition-generator.vsix",
+        "poste2e": "code --install-extension ./cypress-cucumber-step-definition-generator.vsix"
     },
     "engines": {
         "vscode": "^1.78.0"
@@ -126,7 +126,7 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "@nguyenngoclongdev/cucumber-gherkin": "1.2.0",
+        "@nguyenngoclongdev/gherkin": "1.2.1",
         "fs": "0.0.1-security"
     },
     "author": "Nguyen Ngoc Long",
