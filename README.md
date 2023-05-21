@@ -77,34 +77,195 @@ You have multiple options when it comes to generating step definitions using thi
 ## Examples
 
 ```feature
-Feature: Calculator
-    As a user
-    I want to use a calculator to add numbers
-    So that I don't need to add myself
+@web @regression
+Feature: Search functionality
 
-    Scenario: Add two numbers -2 & 3
-        Given I have a calculator
-        When I add "-2" and "3"
-        Then the result should be "1"
+    As a user,
+    I want to be able to search for products on the website,
+    So that I can find what I need quickly and easily.
 
-    Scenario: Add two numbers 10 & 15
-        Given I have a calculator
-        When I add "10" and "15"
-        Then the result should be "25"
+    Background:
+        Given I am on the home page
+        And I am logged in as "user@example.com"
+
+    Rule: Search by keyword
+
+        Scenario: Search with a valid keyword
+            When I enter "laptop" in the search bar
+            And I click the search button
+            Then I should see a list of products containing "laptop"
+            And the total number of results should be 10
+
+        Scenario Outline: Search with invalid keyword
+            When I enter <keyword> in the search bar
+            And I click the search button
+            Then I should see an error message
+
+            Examples:
+                | keyword   |
+                | 12345     |
+                | $%^&*     |
+                | "invalid" |
+
+    Rule: Search by category
+
+        Scenario: Search for a specific category
+            When I select "Electronics" from the category dropdown
+            And I click the search button
+            Then I should see a list of products in the Electronics category
+            And the total number of results should be a float value between 10.0 and 20.0
+
+        Scenario Outline: Search with multiple categories
+            When I select the following categories:
+                | category    |
+                | Electronics |
+                | Clothing    |
+            And I click the search button
+            Then I should see a list of products in the selected categories
+            And the total number of results should be an integer value
+
+    Rule: Search with filters
+
+        Scenario: Search with filters applied
+            When I select "Brand A" from the brand filter
+            And I select "Price > $100" from the price filter
+            And I click the search button
+            Then I should see a list of products that match the applied filters
+            And the total number of results should be greater than 0
+
+    Rule: Search with docstring and datatable
+
+        Scenario: Search with advanced options
+            When I click the "Advanced Search" link
+            And I fill in the following information:
+                """
+                {
+                    "category": "Electronics",
+                    "brand": "Brand B",
+                    "priceRange": [
+                        50,
+                        100
+                    ],
+                    "features": [
+                        {
+                            "name": "WiFi",
+                            "value": "Yes"
+                        },
+                        {
+                            "name": "Bluetooth",
+                            "value": "No"
+                        }
+                    ]
+                }
+                """
+            And I click the search button
+            Then I should see a list of products that match the advanced search criteria
+            And the total number of results should be a float value
+
+        @smoke
+        Scenario: Search withno keyword
+            When I click the search button without entering a keyword
+            Then I should see the home page with no search results displayed
 ```
 
 ```typescript
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import { Given, When, Then, DataTable } from '@badeball/cypress-cucumber-preprocessor';
 
-Given(`I have a calculator`, () => {
+Given(`I am on the home page`, () => {
     // The use of 'Given' keyword is to put the system in a familiar state before the user starts interacting with the system.
 });
 
-When(`I add {string} and {string}`, (arg1: string, arg2: string) => {
+When(`I am logged in as {string}`, (arg0: string) => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+When(`I enter {string} in the search bar`, (arg0: string) => {
     // When the step is to define action performed by the user.
 });
 
-Then(`the result should be {string}`, (arg1: string) => {
+When(`I click the search button`, () => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+Then(`I should see a list of products containing {string}`, (arg0: string) => {
+    // The use of 'Then' keyword is to see the outcome after the action in when step.
+});
+
+When(`the total number of results should be {int}`, (arg0: number) => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+When(`I enter {any} in the search bar`, (arg0: any) => {
+    // When the step is to define action performed by the user.
+});
+
+Then(`I should see an error message`, () => {
+    // The use of 'Then' keyword is to see the outcome after the action in when step.
+});
+
+When(`I select {string} from the category dropdown`, (arg0: string) => {
+    // When the step is to define action performed by the user.
+});
+
+Then(`I should see a list of products in the Electronics category`, () => {
+    // The use of 'Then' keyword is to see the outcome after the action in when step.
+});
+
+When(`the total number of results should be a float value between {float} and {float}`, (arg0: number, arg1: undefined) => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+When(`I select the following categories:`, (arg0: DataTable) => {
+    // Detected argument is an DataTable type
+    // - With Column Headers: use datatable.hashes() to read.
+    // - With Row Headers: use datatable.rowsHash() to read.
+});
+
+Then(`I should see a list of products in the selected categories`, () => {
+    // The use of 'Then' keyword is to see the outcome after the action in when step.
+});
+
+When(`the total number of results should be an integer value`, () => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+When(`I select {string} from the brand filter`, (arg0: string) => {
+    // When the step is to define action performed by the user.
+});
+
+When(`I select {string} from the price filter`, (arg0: string) => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+Then(`I should see a list of products that match the applied filters`, () => {
+    // The use of 'Then' keyword is to see the outcome after the action in when step.
+});
+
+When(`the total number of results should be greater than {int}`, (arg0: number) => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+When(`I click the {string} link`, (arg0: string) => {
+    // When the step is to define action performed by the user.
+});
+
+When(`I fill in the following information:`, (arg0: string) => {
+    // Detected argument is an DocString type
+});
+
+Then(`I should see a list of products that match the advanced search criteria`, () => {
+    // The use of 'Then' keyword is to see the outcome after the action in when step.
+});
+
+When(`the total number of results should be a float value`, () => {
+    // Use And, But to combine several steps into one, to make your scenarios easier to read
+});
+
+When(`I click the search button without entering a keyword`, () => {
+    // When the step is to define action performed by the user.
+});
+
+Then(`I should see the home page with no search results displayed`, () => {
     // The use of 'Then' keyword is to see the outcome after the action in when step.
 });
 ```

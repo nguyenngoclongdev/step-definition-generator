@@ -7,10 +7,10 @@
     "main": "./dist/extension.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator"
+        "url": "https://github.com/nguyenngoclongdev/cucumber-step-definition-generator"
     },
     "bugs": {
-        "url": "https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/issues"
+        "url": "https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/issues"
     },
     "sponsor": {
         "url": "https://www.paypal.me/longnguyenngoc"
