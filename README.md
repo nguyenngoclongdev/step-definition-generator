@@ -1,10 +1,10 @@
-[![CI](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/actions/workflows/pipelines.yml)
+[![CI](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml)
 
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/)
 
 # Cucumber Step Definition Generator
 
@@ -138,7 +138,7 @@ The testing framework you could set are `cypress`, `playwright`, `cucumberjs`.
 I hope you find this extension useful for your testing projects, and I welcome any feedback or contributions to help make it even better.
 
 If you discover a bug, or have a suggestion for a feature request, please
-submit an [issue](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/issues).
+submit an [issue](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/issues).
 
 ## LICENSE
 

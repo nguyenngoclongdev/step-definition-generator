@@ -24,11 +24,11 @@ jobs:
               with:
                   node-version: 16.x
                   registry-url: https://registry.npmjs.org/
-            - name: Install Github package
-              run: yarn install --frozen-lockfile
+            - name: Configure PAT credentials
               env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-                  NODE_OPTIONS: '--registry=https://npm.pkg.github.com'
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: echo "@nguyenngoclongdev:registry=https://npm.pkg.github.com/" > .npmrc && echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+            - run: yarn install --frozen-lockfile
             - name: Install vsce
               run: npm install --global @vscode/vsce
             - name: Publish
