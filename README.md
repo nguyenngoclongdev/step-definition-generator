@@ -12,7 +12,7 @@ This extension is designed to help developers using the testing framework with G
 
 This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyenngoclongdev/).
 
-# Supported language & framework
+# Supported Languages and Frameworks
 
 <p align="center">
     <!-- JavaScript -->
@@ -47,6 +47,8 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 
 ## Using the extension
 
+![Generate step definition](images/generate-step-definition-in-editor.gif)
+
 You have multiple options when it comes to generating step definition using this extension:
 
 -   The extension can generate the step definition and automatically create a new file for it.
@@ -74,11 +76,11 @@ You have multiple options when it comes to generating step definition using this
 2. Search for "Generate step definition" and select "Generate step definition to clipboard or Generate step definition to file".
 3. Press Enter to generate the step definition.
 
-![Generate step definition](images/generate-step-definition-from-cmd.png)
+![Generate step definition](images/generate-step-definition-from-cmd.gif)
 
 ## Configuration
 
-![Configuration](images/step-definition-generator-configuration.png)
+![Configuration](images/step-definition-generator-configuration.gif)
 
 ### Change the default language
 
