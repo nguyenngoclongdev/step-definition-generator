@@ -1,10 +1,10 @@
 [![CI](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/actions/workflows/pipelines.yml)
 
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)
-![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyenngoclong.cypress-cucumber-step-definition-generator)
-![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
+[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
+[![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 # Gherkin Step Definition Generator
 
@@ -16,25 +16,21 @@ This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyen
 
 <p align="center">
     <!-- JavaScript -->
-    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-    </a>
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
     <!-- Typescript -->
-    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
-        <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
-    </a>
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
 </p>
 <p align="center">
     <!-- Cypress -->
-    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+    <a href="https://www.cypress.io" target="_blank">
         <img src="https://img.shields.io/badge/-cypress-49666E?style=for-the-badge&logo=cypress&logoColor=white">
     </a>
     <!-- Cucumberjs -->
-    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+    <a href="https://cucumber.io/docs/installation/javascript/" target="_blank">
         <img src="https://img.shields.io/badge/Cucumber-55BB68?style=for-the-badge&logo=Cucumber&logoColor=white">
     </a>
       <!-- Playwright -->
-    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+    <a href="https://playwright.dev" target="_blank">
         <img src="https://img.shields.io/badge/Playwright-314B58?style=for-the-badge&logo=Playwright&logoColor=white">
     </a>
 </p>
@@ -44,16 +40,18 @@ This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyen
 Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
 
 # Features
--   [Generate step definition](#generate-step-definition) offers multiple options to generate step definitions.
-- Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **Gherkin Syntax**.
-- Additionally, step definitions are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
+
+-   [Gherkin Generate Step Definition](#generate-step-definition) offers multiple options to generate step definitions.
+-   Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **Gherkin Syntax**.
+-   Additionally, step definitions are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
 
 ## Using the extension
 
 You have multiple options when it comes to generating step definitions using this extension:
-- The extension can generate the step definition and automatically create a new file for it.
-- The extension can generate the step definition and copy it to the clipboard for easy access.
-- Alternatively, you can use the Command Palette to generate step definitions directly from within the extension.
+
+-   The extension can generate the step definition and automatically create a new file for it.
+-   The extension can generate the step definition and copy it to the clipboard for easy access.
+-   Alternatively, you can use the Command Palette to generate step definitions directly from within the extension.
 
 ### Generate a step definition and create a new file
 
@@ -72,10 +70,9 @@ You have multiple options when it comes to generating step definitions using thi
 
 ### Generate step definition from Command Palette
 
-To generate step definitions using the Command Palette:
 1. Open the Command Palette with Ctrl + Shift + P or Cmd + Shift + P.
 2. Search for "Cycucum" and select "Generate step definitions to clipboard or Generate step definitions to file".
-5. Press Enter to generate the step definitions.
+3. Press Enter to generate the step definitions.
 
 ![Generate step definition](images/generate-step-definitions-from-cmd.png)
 
