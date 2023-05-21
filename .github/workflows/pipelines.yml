@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: 16.x
         registry-url: https://registry.npmjs.org/
+    - run: npm install @nguyenngoclongdev/cycucum-gherkin --registry=https://npm.pkg.github.com --scope=@nguyenngoclongdev --auth=${{ secrets.NPM_TOKEN }}
     - run: yarn install --frozen-lockfile
     - name: Install vsce
       run: npm install --global @vscode/vsce
@@ -32,3 +33,4 @@ jobs:
       run: yarn deploy
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
