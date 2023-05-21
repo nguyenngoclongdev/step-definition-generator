@@ -1,22 +1,18 @@
-[![CI](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml)
+[![CI](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/actions/workflows/pipelines.yml)
 
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/nguyenngoclong.cypress-cucumber-step-definition-generator)
 ![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/)
 
-# Cucumber Step Definition Generator
+# Gherkin Step Definition Generator
 
 This extension is designed to help developers using the testing framework with Gherkin style feature files to generate step definitions more easily and efficiently. With just a few clicks, you can automatically generate step definitions for your feature files, saving you time and reducing the risk of errors.
 
 This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyenngoclongdev/).
 
-# Installation
-
-Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
-
-Supported language & framework
+# Supported language & framework
 
 <p align="center">
     <!-- JavaScript -->
@@ -42,6 +38,10 @@ Supported language & framework
         <img src="https://img.shields.io/badge/Playwright-314B58?style=for-the-badge&logo=Playwright&logoColor=white">
     </a>
 </p>
+
+# Installation
+
+Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
 
 # Features
 -   [Generate step definition](#generate-step-definition) offers multiple options to generate step definitions.
@@ -72,7 +72,40 @@ You have multiple options when it comes to generating step definitions using thi
 
 ### Generate step definition from Command Palette
 
+To generate step definitions using the Command Palette:
+1. Open the Command Palette with Ctrl + Shift + P or Cmd + Shift + P.
+2. Search for "Cycucum" and select "Generate step definitions to clipboard or Generate step definitions to file".
+5. Press Enter to generate the step definitions.
+
 ![Generate step definition](images/generate-step-definitions-from-cmd.png)
+
+## Configuration
+
+![Configuration](images/configuration.png)
+
+### Change the default language
+
+1. Open settings and search for "cycucum.language"
+2. Set the value to "javascript" or "typescript"
+3. Save the settings
+
+```json
+{
+    "cycucum.language": "typescript"
+}
+```
+
+### Change the testing framework
+
+1. Open settings and search for "cycucum.runner"
+2. Set the value to "cypress", "playwright", or "cucumberjs"
+3. Save the settings
+
+```json
+{
+    "cycucum.runner": "cypress"
+}
+```
 
 ## Examples
 
@@ -270,36 +303,12 @@ Then(`I should see the home page with no search results displayed`, () => {
 });
 ```
 
-## Configuration
-
-### Change the default language
-
-You could change the default language to generate:
-
-```json
-{
-    "cycucum.language": "typescript"
-}
-```
-
-For the default language: It should be set with language id defined in VS Code. The languages you could set are `javascript`, `typescript`.
-
-### Change the testing framework
-
-```json
-{
-    "cycucum.runner": "cypress"
-}
-```
-
-The testing framework you could set are `cypress`, `playwright`, `cucumberjs`.
-
 ## Feedback
 
 I hope you find this extension useful for your testing projects, and I welcome any feedback or contributions to help make it even better.
 
 If you discover a bug, or have a suggestion for a feature request, please
-submit an [issue](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/issues).
+submit an [issue](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/issues).
 
 ## LICENSE
 
