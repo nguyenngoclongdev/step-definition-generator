@@ -1,6 +1,6 @@
 .github
 .vscode
-logo.logoist
+images/original/*.logoist
 node_modules
 src/
 out/
