@@ -6,44 +6,64 @@
 ![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/)
 
-# Cypress Cucumber Step Definition Generator
+# Cucumber Step Definition Generator
 
-This extension allows to generate automatically the step definitions of the gherkin steps of a feature and copy them to the clipboard or export them to file, powered by the [Gherkin](https://github.com/cucumber/gherkin).
+This extension is designed to help developers using the testing framework with Gherkin style feature files to generate step definitions more easily and efficiently. With just a few clicks, you can automatically generate step definitions for your feature files, saving you time and reducing the risk of errors.
 
 This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyenngoclongdev/).
 
 # Installation
 
-Get it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
+Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
 
-## Features
+Supported language & framework
 
--   [Generate step definition](#generate-step-definition)
--   Language support
-    -   JavaScript
-    -   TypeScript
+<p align="center">
+    <!-- JavaScript -->
+    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+    </a>
+    <!-- Typescript -->
+    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+        <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+    </a>
+</p>
+<p align="center">
+    <!-- Cypress -->
+    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+        <img src="https://img.shields.io/badge/-cypress-49666E?style=for-the-badge&logo=cypress&logoColor=white">
+    </a>
+    <!-- Cucumberjs -->
+    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+        <img src="https://img.shields.io/badge/Cucumber-55BB68?style=for-the-badge&logo=Cucumber&logoColor=white">
+    </a>
+      <!-- Playwright -->
+    <a href="https://github.com/nguyenngoclongdev?tab=repositories" target="_blank">
+        <img src="https://img.shields.io/badge/Playwright-314B58?style=for-the-badge&logo=Playwright&logoColor=white">
+    </a>
+</p>
 
-## Generate step definition
-
-![Generate step definition](images/generate-step-definitions-in-editor.gif)
-
-Different options available to Generate the Step Definition:
-
--   Generate step definition with creating a new file automatically as instructed by cypress-cucumber-preprocessor plugin.
--   Generate step definition and copy to clipboard
--   Generate step definition from Command Palette
+# Features
+-   [Generate step definition](#generate-step-definition) offers multiple options to generate step definitions.
+- Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **Gherkin Syntax**.
+- Additionally, step definitions are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
 
 ## Using the extension
 
-### Generate step definition with creating a new file automatically as instructed by cypress-cucumber-preprocessor plugin.
+You have multiple options when it comes to generating step definitions using this extension:
+- The extension can generate the step definition and automatically create a new file for it.
+- The extension can generate the step definition and copy it to the clipboard for easy access.
+- Alternatively, you can use the Command Palette to generate step definitions directly from within the extension.
+
+### Generate a step definition and create a new file
 
 1. Open any .feature file in vs code editor
 2. Right click on the editor and select `Cycucum: Generate step definitions to file`
-3. Extension create the required folder structure i.e. folder with feature file name and then ts file under that folder if folder doesn't exists, otherwise append the existing step definition js file if already exits.
+3. If the file for the step definition doesn't exist, the extension will create it. Otherwise, if the file already exists, the extension will simply append the new step definition to the end of the existing file.
 
 ![Generate step definition](images/generate-step-definitions-in-explorer.gif)
 
-### Generate step definition and copy to clipboard
+### Generate a step definition and copy to clipboard
 
 1. Open any .feature file in vs code editor
 2. Right click on the editor and select `Cycucum: Generate step definitions to clipboard`
@@ -91,8 +111,6 @@ Then(`the result should be {string}`, (arg1: string) => {
 
 ## Configuration
 
-![Configuration](images/configuration.png)
-
 ### Change the default language
 
 You could change the default language to generate:
@@ -102,17 +120,22 @@ You could change the default language to generate:
     "cycucum.language": "typescript"
 }
 ```
+
 For the default language: It should be set with language id defined in VS Code. The languages you could set are `javascript`, `typescript`.
 
-### Change the import library
+### Change the testing framework
 
 ```json
 {
-    "cycucum.import": "@badeball/cypress-cucumber-preprocessor"
+    "cycucum.runner": "cypress"
 }
 ```
 
+The testing framework you could set are `cypress`, `playwright`, `cucumberjs`.
+
 ## Feedback
+
+I hope you find this extension useful for your testing projects, and I welcome any feedback or contributions to help make it even better.
 
 If you discover a bug, or have a suggestion for a feature request, please
 submit an [issue](https://github.com/nguyenngoclongdev/cypress-cucumber-step-definition-generator/issues).

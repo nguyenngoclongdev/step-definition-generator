@@ -19,7 +19,6 @@
     "ignorePatterns": [
         "out",
         "dist",
-        "cypress-test/*.ts",
         "**/*.d.ts"
     ]
 }

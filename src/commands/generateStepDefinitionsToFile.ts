@@ -1,11 +1,9 @@
 import * as fs from 'fs';
 import * as vscode from 'vscode';
-import { CycucumConfiguration } from '../interfaces/Config.interface';
-import { FeatureProcessor } from '../services/FeatureProcessor';
-import StepDefinitions from '../services/StepDefinition';
-import { getStepRegex } from '../utils/getStepRegex';
 import path = require('path');
-import { getImportLibrary } from '../utils/getImportLibrary';
+import { GherkinCodeParse } from '@nguyenngoclongdev/cycucum-gherkin';
+import { getFeatureContent, getLanguage, getRunner } from '../utils';
+import { CycucumConfiguration } from '../extension';
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
     const dirPath = path.dirname(stepDefinitionFilePath);
@@ -33,32 +31,21 @@ const getStepDefinitionPath = (uri: vscode.Uri): string => {
 
 export const generateStepDefinitionsToFile = async (uri: vscode.Uri, config: CycucumConfiguration): Promise<void> => {
     try {
-        // Parse feature content
-        const featureProcessor = new FeatureProcessor(uri, config);
-        const content = featureProcessor.parseFeatureContent();
+        const runner = getRunner(config.runner);
+        const language = getLanguage(config.language);
+
+        // Get feature content
+        const featureContent = getFeatureContent(uri);
 
         // Generate code and write to file
-        const stepDefinitions = new StepDefinitions(uri, config);
+        const gherkinCodeParse = new GherkinCodeParse(runner, language);
         const stepDefinitionFilePath = getStepDefinitionPath(uri);
         if (fs.existsSync(stepDefinitionFilePath)) {
-            // Remove duplicates
             const stepDefinitionFileContent = fs.readFileSync(stepDefinitionFilePath, 'utf-8');
-            if (stepDefinitionFileContent) {
-                content.map((pickle) => {
-                    pickle.steps = pickle.steps.filter((pickleStep) => {
-                        const { text, type } = pickleStep;
-                        const stepRegex = getStepRegex(type, text);
-                        return !stepRegex?.test(stepDefinitionFileContent);
-                    });
-                });
-            }
-
-            const importLibrary = getImportLibrary(config);
-            const isIncludeImport = !stepDefinitionFileContent.includes(importLibrary);
-            const output = await stepDefinitions.generate(content, isIncludeImport);
+            const output = gherkinCodeParse.parse(featureContent, stepDefinitionFileContent);
             appendFile(stepDefinitionFilePath, output);
         } else {
-            const output = await stepDefinitions.generate(content);
+            const output = gherkinCodeParse.parse(featureContent);
             overrideFile(stepDefinitionFilePath, output);
         }
         vscode.window.showInformationMessage('Generate step definitions successful!', stepDefinitionFilePath);

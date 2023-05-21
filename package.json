@@ -1,9 +1,9 @@
 {
     "name": "cypress-cucumber-step-definition-generator",
-    "displayName": "Cypress Cucumber Step Definition Generator",
-    "description": "Generate step definitions for cypress-cucumber-preprocessor",
+    "displayName": "Cucumber Step Definition Generator for Cypress/Playwright/Cucumberjs",
+    "description": "Generate step definitions for multiple framework (.e.g Cypress, Playwright, Cucumberjs)",
     "icon": "images/cycucum.png",
-    "version": "1.0.8",
+    "version": "2.0.0",
     "main": "./dist/extension.js",
     "repository": {
         "type": "git",
@@ -15,12 +15,14 @@
     "sponsor": {
         "url": "https://www.paypal.me/longnguyenngoc"
     },
+    "homepage": "https://nguyenngoclongdev.github.io",
     "categories": [
         "Testing"
     ],
     "keywords": [
         "cypress",
         "cucumber",
+        "cucumberjs",
         "generate",
         "generator",
         "step",
@@ -71,29 +73,24 @@
         "configuration": {
             "title": "Cycucum",
             "properties": {
+                "cycucum.runner": {
+                    "type": "string",
+                    "default": "cypress",
+                    "enum": [
+                        "cypress",
+                        "playwright",
+                        "cucumberjs"
+                    ],
+                    "description": "BDD Testing Framework"
+                },
                 "cycucum.language": {
                     "type": "string",
                     "default": "typescript",
                     "enum": [
-                        "typescript",
-                        "javascript"
+                        "javascript",
+                        "typescript"
                     ],
-                    "description": "The language of step deinitions."
-                },
-                "cycucum.feature": {
-                    "type": "string",
-                    "default": "feature",
-                    "description": "The cycucum.feature setting overrides where the extension should look for .feature files."
-                },
-                "cycucum.import": {
-                    "type": "string",
-                    "default": "@badeball/cypress-cucumber-preprocessor",
-                    "description": "The library using to import Given When Then after generated code. (e.g. @badeball/cypress-cucumber-preprocessor)"
-                },
-                "cycucum.destination": {
-                    "type": "string",
-                    "default": "",
-                    "description": "Relative path to generate step deinitions. (e.g. src/step-deinitions)"
+                    "description": "The language of step deinitions"
                 }
             }
         }
@@ -128,8 +125,7 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "@cucumber/gherkin": "^26.2.0",
-        "@cucumber/messages": "^22.0.0",
+        "@nguyenngoclongdev/cycucum-gherkin": "1.1.2",
         "fs": "0.0.1-security"
     },
     "author": "Nguyen Ngoc Long",

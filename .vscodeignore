@@ -1,7 +1,6 @@
 .github
 .vscode
 logo.logoist
-cypress-test
 node_modules
 src/
 out/

@@ -1,7 +1,11 @@
 import * as vscode from 'vscode';
 import { generateStepDefinitionsToClipboard } from './commands/generateStepDefinitionsToClipboard';
 import { generateStepDefinitionsToFile } from './commands/generateStepDefinitionsToFile';
-import { CycucumConfiguration } from './interfaces/Config.interface';
+
+export interface CycucumConfiguration extends vscode.WorkspaceConfiguration {
+    runner?: string;
+    language?: string;
+}
 
 export function activate(context: vscode.ExtensionContext) {
     // Get configuration for extensions
@@ -23,5 +27,5 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-    vscode.window.showInformationMessage('[Cypress Cucumber Step Definition Generator] goodbye!');
+    vscode.window.showInformationMessage('[Cucumber Step Definition Generator] goodbye!');
 }
