@@ -1,9 +1,9 @@
-import { GherkinCodeParse } from '@nguyenngoclongdev/cycucum-gherkin';
+import { GherkinCodeParse } from '@nguyenngoclongdev/cucumber-gherkin';
 import * as vscode from 'vscode';
-import { CycucumConfiguration } from '../extension';
+import { ExtensionConfiguration } from '../extension';
 import { getFeatureContent, getLanguage, getRunner } from '../utils';
 
-export const generateStepDefinitionsToClipboard = async (uri: vscode.Uri, config: CycucumConfiguration): Promise<void> => {
+export const generateStepDefinitionToClipboard = async (uri: vscode.Uri, config: ExtensionConfiguration): Promise<void> => {
     try {
         const runner = getRunner(config.runner);
         const language = getLanguage(config.language);

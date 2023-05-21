@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 import * as vscode from 'vscode';
 import path = require('path');
-import { GherkinCodeParse } from '@nguyenngoclongdev/cycucum-gherkin';
+import { GherkinCodeParse } from '@nguyenngoclongdev/cucumber-gherkin';
 import { getFeatureContent, getLanguage, getRunner } from '../utils';
-import { CycucumConfiguration } from '../extension';
+import { ExtensionConfiguration } from '../extension';
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
     const dirPath = path.dirname(stepDefinitionFilePath);
@@ -29,7 +29,7 @@ const getStepDefinitionPath = (uri: vscode.Uri): string => {
     return '';
 };
 
-export const generateStepDefinitionsToFile = async (uri: vscode.Uri, config: CycucumConfiguration): Promise<void> => {
+export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: ExtensionConfiguration): Promise<void> => {
     try {
         const runner = getRunner(config.runner);
         const language = getLanguage(config.language);

@@ -1,4 +1,4 @@
-[![CI](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/actions/workflows/pipelines.yml)
+[![CI](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/actions/workflows/pipelines.yml)
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
@@ -6,9 +6,9 @@
 [![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-# Gherkin Step Definition Generator
+# Cucumber Step Definition Generator
 
-This extension is designed to help developers using the testing framework with Gherkin style feature files to generate step definitions more easily and efficiently. With just a few clicks, you can automatically generate step definitions for your feature files, saving you time and reducing the risk of errors.
+This extension is designed to help developers using the testing framework with Gherkin style feature files to generate step definition more easily and efficiently. With just a few clicks, you can automatically generate step definition for your feature files, saving you time and reducing the risk of errors.
 
 This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyenngoclongdev/).
 
@@ -41,66 +41,66 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 
 # Features
 
--   [Gherkin Generate Step Definition](#generate-step-definition) offers multiple options to generate step definitions.
+-   [Cucumber Step Definition Generator](#generate-step-definition) offers multiple options to generate step definition.
 -   Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **Gherkin Syntax**.
--   Additionally, step definitions are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
+-   Additionally, step definition are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
 
 ## Using the extension
 
-You have multiple options when it comes to generating step definitions using this extension:
+You have multiple options when it comes to generating step definition using this extension:
 
 -   The extension can generate the step definition and automatically create a new file for it.
 -   The extension can generate the step definition and copy it to the clipboard for easy access.
--   Alternatively, you can use the Command Palette to generate step definitions directly from within the extension.
+-   Alternatively, you can use the Command Palette to generate step definition directly from within the extension.
 
 ### Generate a step definition and create a new file
 
 1. Open any .feature file in vs code editor
-2. Right click on the editor and select `Cycucum: Generate step definitions to file`
+2. Right click on the editor and select `Generate step definition to file`
 3. If the file for the step definition doesn't exist, the extension will create it. Otherwise, if the file already exists, the extension will simply append the new step definition to the end of the existing file.
 
-![Generate step definition](images/generate-step-definitions-in-explorer.gif)
+![Generate step definition](images/generate-step-definition-in-explorer.gif)
 
 ### Generate a step definition and copy to clipboard
 
 1. Open any .feature file in vs code editor
-2. Right click on the editor and select `Cycucum: Generate step definitions to clipboard`
+2. Right click on the editor and select `Generate step definition to clipboard`
 
-![Generate step definition](images/generate-step-definitions-to-clipboard.gif)
+![Generate step definition](images/generate-step-definition-to-clipboard.gif)
 
 ### Generate step definition from Command Palette
 
 1. Open the Command Palette with Ctrl + Shift + P or Cmd + Shift + P.
-2. Search for "Cycucum" and select "Generate step definitions to clipboard or Generate step definitions to file".
-3. Press Enter to generate the step definitions.
+2. Search for "Generate step definition" and select "Generate step definition to clipboard or Generate step definition to file".
+3. Press Enter to generate the step definition.
 
-![Generate step definition](images/generate-step-definitions-from-cmd.png)
+![Generate step definition](images/generate-step-definition-from-cmd.png)
 
 ## Configuration
 
-![Configuration](images/configuration.png)
+![Configuration](images/step-definition-generator-configuration.png)
 
 ### Change the default language
 
-1. Open settings and search for "cycucum.language"
+1. Open settings and search for "cucumber-step-definition-generator.language"
 2. Set the value to "javascript" or "typescript"
 3. Save the settings
 
 ```json
 {
-    "cycucum.language": "typescript"
+    "cucumber-step-definition-generator.language": "typescript"
 }
 ```
 
 ### Change the testing framework
 
-1. Open settings and search for "cycucum.runner"
+1. Open settings and search for "cucumber-step-definition-generator.runner"
 2. Set the value to "cypress", "playwright", or "cucumberjs"
 3. Save the settings
 
 ```json
 {
-    "cycucum.runner": "cypress"
+    "cucumber-step-definition-generator.runner": "cypress"
 }
 ```
 
@@ -305,7 +305,7 @@ Then(`I should see the home page with no search results displayed`, () => {
 I hope you find this extension useful for your testing projects, and I welcome any feedback or contributions to help make it even better.
 
 If you discover a bug, or have a suggestion for a feature request, please
-submit an [issue](https://github.com/nguyenngoclongdev/gherkin-step-definition-generator/issues).
+submit an [issue](https://github.com/nguyenngoclongdev/cucumber-step-definition-generator/issues).
 
 ## LICENSE
 

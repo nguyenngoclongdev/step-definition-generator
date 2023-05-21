@@ -1,31 +1,31 @@
 import * as vscode from 'vscode';
-import { generateStepDefinitionsToClipboard } from './commands/generateStepDefinitionsToClipboard';
-import { generateStepDefinitionsToFile } from './commands/generateStepDefinitionsToFile';
+import { generateStepDefinitionToClipboard } from './commands/generateStepDefinitionToClipboard';
+import { generateStepDefinitionToFile } from './commands/generateStepDefinitionToFile';
 
-export interface CycucumConfiguration extends vscode.WorkspaceConfiguration {
+export interface ExtensionConfiguration extends vscode.WorkspaceConfiguration {
     runner?: string;
     language?: string;
 }
 
 export function activate(context: vscode.ExtensionContext) {
     // Get configuration for extensions
-    const config = vscode.workspace.getConfiguration('cycucum') as CycucumConfiguration;
+    const config = vscode.workspace.getConfiguration('cucumber-step-definition-generator') as ExtensionConfiguration;
 
-    // Generate step definitions to clipboard
+    // Generate step definition to clipboard
     context.subscriptions.push(
-        vscode.commands.registerCommand('extension.generateStepDefinitionsToClipboard', async (uri: vscode.Uri) => {
-            await generateStepDefinitionsToClipboard(uri, config);
+        vscode.commands.registerCommand('cucumber-step-definition-generator.generateStepDefinitionToClipboard', async (uri: vscode.Uri) => {
+            await generateStepDefinitionToClipboard(uri, config);
         })
     );
 
-    // Generate step definitions to file
+    // Generate step definition to file
     context.subscriptions.push(
-        vscode.commands.registerCommand('extension.generateStepDefinitionsToFile', async (uri: vscode.Uri) => {
-            await generateStepDefinitionsToFile(uri, config);
+        vscode.commands.registerCommand('cucumber-step-definition-generator.generateStepDefinitionToFile', async (uri: vscode.Uri) => {
+            await generateStepDefinitionToFile(uri, config);
         })
     );
 }
 
 export function deactivate() {
-    vscode.window.showInformationMessage('[Gherkin Step Definition Generator] goodbye!');
+    vscode.window.showInformationMessage('[Cucumber Step Definition Generator] goodbye!');
 }

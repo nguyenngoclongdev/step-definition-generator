@@ -7,5 +7,5 @@ out/
 .eslintrc.json
 .gitignore
 .vscodeignore
-cycucum.vsix
+*.vsix
 tsconfig.json
