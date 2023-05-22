@@ -47,7 +47,7 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 
 ## Using the extension
 
-![Generate step definition](images/generate-step-definition-in-editor.gif)
+![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-in-editor.gif)
 
 You have multiple options when it comes to generating step definition using this extension:
 
@@ -61,14 +61,14 @@ You have multiple options when it comes to generating step definition using this
 2. Right click on the editor and select `Generate step definition to file`
 3. If the file for the step definition doesn't exist, the extension will create it. Otherwise, if the file already exists, the extension will simply append the new step definition to the end of the existing file.
 
-![Generate step definition](images/generate-step-definition-in-explorer.gif)
+![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-in-explorer.gif)
 
 ### Generate a step definition and copy to clipboard
 
 1. Open any .feature file in vs code editor
 2. Right click on the editor and select `Generate step definition to clipboard`
 
-![Generate step definition](images/generate-step-definition-to-clipboard.gif)
+![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-to-clipboard.gif)
 
 ### Generate step definition from Command Palette
 
@@ -76,11 +76,11 @@ You have multiple options when it comes to generating step definition using this
 2. Search for "Generate step definition" and select "Generate step definition to clipboard or Generate step definition to file".
 3. Press Enter to generate the step definition.
 
-![Generate step definition](images/generate-step-definition-from-cmd.gif)
+![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-from-cmd.gif)
 
 ## Configuration
 
-![Configuration](images/step-definition-generator-configuration.gif)
+![Configuration](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/step-definition-generator-configuration.gif)
 
 ### Change the default language
 
