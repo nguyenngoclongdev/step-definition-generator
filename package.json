@@ -112,6 +112,9 @@
     "engines": {
         "vscode": "^1.60.0"
     },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
     "devDependencies": {
         "@types/glob": "^8.1.0",
         "@types/mocha": "^10.0.1",
