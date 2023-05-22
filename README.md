@@ -243,7 +243,7 @@ Then(`I should see a list of products in the Electronics category`, () => {
     // The use of 'Then' keyword is to see the outcome after the action in when step.
 });
 
-When(`the total number of results should be a float value between {float} and {float}`, (arg0: number, arg1: undefined) => {
+When(`the total number of results should be a float value between {float} and {float}`, (arg0: number, arg1: number) => {
     // Use And, But to combine several steps into one, to make your scenarios easier to read
 });
 
