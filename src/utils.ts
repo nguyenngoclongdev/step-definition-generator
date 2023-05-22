@@ -1,7 +1,7 @@
 import { SupportedLanguage, SupportedRunner } from "@nguyenngoclongdev/gherkin";
-import { readFileSync } from 'fs';
 import * as vscode from 'vscode';
 import { TextEditor } from 'vscode';
+import { SUPPORTED_FEATURE_FILE } from "./extension";
 
 export const getRunner = (runner: string | undefined): SupportedRunner => {
     switch (runner?.toLowerCase()) {
@@ -27,37 +27,39 @@ export const getLanguage = (language: string | undefined): SupportedLanguage => 
     }
 };
 
+export const getLanguageExt = (language: SupportedLanguage): string => {
+    switch (language?.toLowerCase()) {
+        case SupportedLanguage.javascript:
+            return 'js';
+        case SupportedLanguage.typescript:
+            return 'ts';
+        default:
+            return 'ts';
+    }
+};
+
 const getActiveTextEditor = (): TextEditor => {
     return vscode.window.activeTextEditor as TextEditor;
 };
 
-export const getFeatureContent = (uri: vscode.Uri): string => {
+export const getFeatureFilePath = (uri: vscode.Uri): string | undefined => {
     // If user select from explorer context, get file content from explorer context
     const featureFileFromExplorer = uri?.fsPath;
     if (featureFileFromExplorer) {
-        return readFileSync(featureFileFromExplorer, 'utf8');
+        return featureFileFromExplorer;
     }
 
     // If user not selected text editor
     const activeTextEditor = getActiveTextEditor();
     if (!activeTextEditor) {
-        vscode.window.showWarningMessage('Please select text editor!');
-        return '';
+        return undefined;
     }
 
     // If text editor not a feature file
     const featureFilePath = activeTextEditor.document.fileName;
-    if (!featureFilePath?.endsWith('.feature')) {
-        vscode.window.showWarningMessage('This file not supported!');
-        return '';
+    const fileIsNotSupport = !featureFilePath || !SUPPORTED_FEATURE_FILE.some(ext => featureFilePath.endsWith(ext));
+    if (fileIsNotSupport) {
+        return undefined;
     }
-
-    // If user select text in the feature file, return text selected
-    const selectedText = activeTextEditor.document.getText(activeTextEditor.selection);
-    if (selectedText?.length > 0) {
-        return selectedText;
-    }
-
-    // Othewise, return feature file content from active editor
-    return readFileSync(featureFilePath, 'utf8');
+    return featureFilePath;
 };

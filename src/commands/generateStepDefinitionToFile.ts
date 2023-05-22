@@ -1,9 +1,10 @@
-import * as fs from 'fs';
-import * as vscode from 'vscode';
-import path = require('path');
 import { GherkinCodeParse } from '@nguyenngoclongdev/gherkin';
-import { getFeatureContent, getLanguage, getRunner } from '../utils';
+import * as fs from 'fs';
+import { readFileSync } from 'fs';
+import * as vscode from 'vscode';
 import { ExtensionConfiguration } from '../extension';
+import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner } from '../utils';
+import path = require('path');
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
     const dirPath = path.dirname(stepDefinitionFilePath);
@@ -19,33 +20,34 @@ const appendFile = (stepDefinitionFilePath: string, content: string): void => {
     });
 };
 
-const getStepDefinitionPath = (uri: vscode.Uri): string => {
-    const featureExt = '.feature';
-    const stepDefinitionExt = '.ts';
-    const fileNamePath = uri?.fsPath;
-    if (fileNamePath?.endsWith(featureExt)) {
-        return fileNamePath.slice(0, -featureExt.length).concat(stepDefinitionExt);
-    }
-    return '';
-};
-
 export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: ExtensionConfiguration): Promise<void> => {
     try {
         const runner = getRunner(config.runner);
         const language = getLanguage(config.language);
 
+        // Get feature file path
+        const featureFilePath = getFeatureFilePath(uri);
+        if (!featureFilePath) {
+            vscode.window.showWarningMessage('Make sure to open the .feature or .features file before running the command!');
+            return;
+        }
+
+        // Get step definition file path
+        const featureFileExt = path.parse(featureFilePath).ext;
+        const stepDefinitionFileExt = getLanguageExt(language);
+        const stepDefinitionFilePath = featureFilePath.slice(0, -featureFileExt.length).concat(stepDefinitionFileExt);
+
         // Get feature content
-        const featureContent = getFeatureContent(uri);
+        const featureFileContent = readFileSync(featureFilePath, 'utf8');
 
         // Generate code and write to file
         const gherkinCodeParse = new GherkinCodeParse(runner, language);
-        const stepDefinitionFilePath = getStepDefinitionPath(uri);
         if (fs.existsSync(stepDefinitionFilePath)) {
             const stepDefinitionFileContent = fs.readFileSync(stepDefinitionFilePath, 'utf-8');
-            const output = gherkinCodeParse.parse(featureContent, stepDefinitionFileContent);
+            const output = gherkinCodeParse.parse(featureFileContent, stepDefinitionFileContent);
             appendFile(stepDefinitionFilePath, output);
         } else {
-            const output = gherkinCodeParse.parse(featureContent);
+            const output = gherkinCodeParse.parse(featureFileContent);
             overrideFile(stepDefinitionFilePath, output);
         }
         vscode.window.showInformationMessage('Generate step definitions successful!', stepDefinitionFilePath);

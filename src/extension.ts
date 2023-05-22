@@ -2,6 +2,8 @@ import * as vscode from 'vscode';
 import { generateStepDefinitionToClipboard } from './commands/generateStepDefinitionToClipboard';
 import { generateStepDefinitionToFile } from './commands/generateStepDefinitionToFile';
 
+export const SUPPORTED_FEATURE_FILE = ["feature", "features"];
+
 export interface ExtensionConfiguration extends vscode.WorkspaceConfiguration {
     runner?: string;
     language?: string;

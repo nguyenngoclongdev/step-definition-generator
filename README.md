@@ -204,101 +204,105 @@ Feature: Search functionality
 import { Given, When, Then, DataTable } from '@badeball/cypress-cucumber-preprocessor';
 
 Given(`I am on the home page`, () => {
-    // The use of 'Given' keyword is to put the system in a familiar state before the user starts interacting with the system.
+    // [Given] Sets up the initial state of the system.
 });
 
-When(`I am logged in as {string}`, (arg0: string) => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+Given(`I am logged in as {string}`, (arg0: string) => {
+    // [Given] Sets up the initial state of the system.
 });
 
 When(`I enter {string} in the search bar`, (arg0: string) => {
-    // When the step is to define action performed by the user.
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 When(`I click the search button`, () => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 Then(`I should see a list of products containing {string}`, (arg0: string) => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
-When(`the total number of results should be {int}`, (arg0: number) => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+Then(`the total number of results should be {int}`, (arg0: number) => {
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
 When(`I enter {any} in the search bar`, (arg0: any) => {
-    // When the step is to define action performed by the user.
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 Then(`I should see an error message`, () => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
 When(`I select {string} from the category dropdown`, (arg0: string) => {
-    // When the step is to define action performed by the user.
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 Then(`I should see a list of products in the Electronics category`, () => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
-When(`the total number of results should be a float value between {float} and {float}`, (arg0: number, arg1: number) => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+Then(`the total number of results should be a float value between {float} and {float}`, (arg0: number, arg1: number) => {
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
 When(`I select the following categories:`, (arg0: DataTable) => {
-    // Detected argument is an DataTable type
-    // - With Column Headers: use datatable.hashes() to read.
-    // - With Row Headers: use datatable.rowsHash() to read.
+    // [When] Describes the action or event that triggers the scenario.
+    // <DataTable> argument is detected:
+    // - With column headers: use DataTable.rowsHash(), which outputs an object containing key-value pairs for each row (e.g. { key1: value, key2: value }).
+    // - With row headers: use DataTable.hashes(), which outputs an array of objects (e.g. [{ key1: value, key2: value }]).
 });
 
 Then(`I should see a list of products in the selected categories`, () => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
-When(`the total number of results should be an integer value`, () => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+Then(`the total number of results should be an integer value`, () => {
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
 When(`I select {string} from the brand filter`, (arg0: string) => {
-    // When the step is to define action performed by the user.
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 When(`I select {string} from the price filter`, (arg0: string) => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 Then(`I should see a list of products that match the applied filters`, () => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
-When(`the total number of results should be greater than {int}`, (arg0: number) => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+Then(`the total number of results should be greater than {int}`, (arg0: number) => {
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
 When(`I click the {string} link`, (arg0: string) => {
-    // When the step is to define action performed by the user.
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 When(`I fill in the following information:`, (arg0: string) => {
-    // Detected argument is an DocString type
+    // [When] Describes the action or event that triggers the scenario.
+    // <DocString> argument is detected:
+    // - DocString allows for passing a multi-line string as an argument.
+    // - It can also be used to provide large amounts of text data, such as JSON or XML payloads.
 });
 
 Then(`I should see a list of products that match the advanced search criteria`, () => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
-When(`the total number of results should be a float value`, () => {
-    // Use And, But to combine several steps into one, to make your scenarios easier to read
+Then(`the total number of results should be a float value`, () => {
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 
 When(`I click the search button without entering a keyword`, () => {
-    // When the step is to define action performed by the user.
+    // [When] Describes the action or event that triggers the scenario.
 });
 
 Then(`I should see the home page with no search results displayed`, () => {
-    // The use of 'Then' keyword is to see the outcome after the action in when step.
+    // [Then] Describes the expected outcome or result of the scenario.
 });
 ```
 
