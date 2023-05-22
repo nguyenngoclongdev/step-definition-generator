@@ -7,6 +7,10 @@ import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner } from '../u
 import path = require('path');
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
+    if (!content.trim()) {
+        return;
+    }
+
     const dirPath = path.dirname(stepDefinitionFilePath);
     fs.mkdir(dirPath, () => {
         fs.writeFileSync(stepDefinitionFilePath, content);
@@ -14,6 +18,10 @@ const overrideFile = (stepDefinitionFilePath: string, content: string): void => 
 };
 
 const appendFile = (stepDefinitionFilePath: string, content: string): void => {
+    if (!content.trim()) {
+        return;
+    }
+
     const dirPath = path.dirname(stepDefinitionFilePath);
     fs.mkdir(dirPath, () => {
         fs.appendFileSync(stepDefinitionFilePath, content);
