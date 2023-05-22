@@ -29,5 +29,5 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-    vscode.window.showInformationMessage('[Cucumber Step Definition Generator] goodbye!');
+    vscode.window.showInformationMessage('[Cucumber Step Definition Generator] Goodbye.');
 }

@@ -30,11 +30,11 @@ export const getLanguage = (language: string | undefined): SupportedLanguage => 
 export const getLanguageExt = (language: SupportedLanguage): string => {
     switch (language?.toLowerCase()) {
         case SupportedLanguage.javascript:
-            return 'js';
+            return '.js';
         case SupportedLanguage.typescript:
-            return 'ts';
+            return '.ts';
         default:
-            return 'ts';
+            return '.ts';
     }
 };
 

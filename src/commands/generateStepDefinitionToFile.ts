@@ -28,7 +28,7 @@ export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: Exte
         // Get feature file path
         const featureFilePath = getFeatureFilePath(uri);
         if (!featureFilePath) {
-            vscode.window.showWarningMessage('Make sure to open the .feature or .features file before running the command!');
+            vscode.window.showWarningMessage('Open .feature or .features file before running the command!');
             return;
         }
 
@@ -50,9 +50,9 @@ export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: Exte
             const output = gherkinCodeParse.parse(featureFileContent);
             overrideFile(stepDefinitionFilePath, output);
         }
-        vscode.window.showInformationMessage('Generate step definitions successful!', stepDefinitionFilePath);
+        vscode.window.showInformationMessage('Step definitions generated successfully!', stepDefinitionFilePath);
     } catch (error) {
         const errorMessage = (error as Error)?.message;
-        vscode.window.showErrorMessage('Generate step definitions failed!', errorMessage);
+        vscode.window.showErrorMessage('Failed to generate step definitions!', errorMessage);
     }
 };

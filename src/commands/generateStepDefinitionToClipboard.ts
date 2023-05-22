@@ -12,7 +12,7 @@ export const generateStepDefinitionToClipboard = async (uri: vscode.Uri, config:
         // Get feature file path
         const featureFilePath = getFeatureFilePath(uri);
         if (!featureFilePath) {
-            vscode.window.showWarningMessage('Make sure to open the .feature or .features file before running the command!');
+            vscode.window.showWarningMessage('Open .feature or .features file before running the command!');
             return;
         }
 
@@ -26,9 +26,9 @@ export const generateStepDefinitionToClipboard = async (uri: vscode.Uri, config:
         // Write to clipboard
         const clipboard = vscode.env.clipboard;
         await clipboard.writeText(output);
-        vscode.window.showInformationMessage('Step definitions copied to the clipboard!');
+        vscode.window.showInformationMessage('Step definitions have been copied to the clipboard!');
     } catch (error) {
         const errorMessage = (error as Error)?.message;
-        vscode.window.showErrorMessage('Generate step definitions failed!', errorMessage);
+        vscode.window.showErrorMessage('Failed to generate step definitions!', errorMessage);
     }
 };
