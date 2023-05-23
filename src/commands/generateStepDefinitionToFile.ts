@@ -6,6 +6,21 @@ import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner, showErrorMessageWithDetail } from '../utils';
 import path = require('path');
 
+const showTextDocument = (stepDefinitionFilePath: string): void => {
+    const existingDoc = vscode.workspace.textDocuments.find(doc => doc.uri.fsPath === stepDefinitionFilePath);
+    if (existingDoc) {
+        const visibleEditor = vscode.window.visibleTextEditors.find(editor => editor.document === existingDoc);
+        if (visibleEditor) {
+            vscode.window.showTextDocument(visibleEditor.document, visibleEditor.viewColumn, false);
+        } else {
+            vscode.window.showTextDocument(existingDoc, { preserveFocus: false });
+        }
+    } else {
+        const stepDefinitionFileUri = vscode.Uri.file(stepDefinitionFilePath);
+        vscode.window.showTextDocument(stepDefinitionFileUri, { preserveFocus: false });
+    }
+};
+
 export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: ExtensionConfiguration): Promise<void> => {
     try {
         const runner = getRunner(config.runner);
@@ -55,8 +70,7 @@ export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: Exte
         });
 
         // Auto open file after generate step definition
-        const stepDefinitionFileUri = vscode.Uri.file(stepDefinitionFilePath);
-        vscode.window.showTextDocument(stepDefinitionFileUri);
+        showTextDocument(stepDefinitionFilePath);
 
         // Show message
         vscode.window.showInformationMessage('Step definitions generated successfully!', 'View Output Path')
