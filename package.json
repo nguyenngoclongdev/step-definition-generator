@@ -3,7 +3,7 @@
     "displayName": "Cucumber Step Definition Generator ",
     "description": "Generate step definition for multiple frameworks, such as Cypress, Playwright, and Cucumberjs. Powered by Gherkin Syntax.",
     "icon": "logo.png",
-    "version": "2.1.3",
+    "version": "2.1.4",
     "main": "./dist/extension.js",
     "repository": {
         "type": "git",
