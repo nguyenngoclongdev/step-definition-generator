@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import { readFileSync } from 'fs';
 import * as vscode from 'vscode';
 import { ExtensionConfiguration } from '../extension';
-import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner } from '../utils';
+import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner, showErrorMessageWithDetail } from '../utils';
 import path = require('path');
 
 const overrideFile = (stepDefinitionFilePath: string, content: string): void => {
@@ -50,9 +50,15 @@ export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: Exte
             const output = gherkinCodeParse.parse(featureFileContent);
             overrideFile(stepDefinitionFilePath, output);
         }
-        vscode.window.showInformationMessage('Step definitions generated successfully!', stepDefinitionFilePath);
+
+        // Show message
+        vscode.window.showInformationMessage('Step definitions generated successfully!', 'View Output Path')
+            .then((selection) => {
+                if (selection === 'View Output Path') {
+                    vscode.window.showInformationMessage(stepDefinitionFilePath, { modal: true });
+                }
+            });
     } catch (error) {
-        const errorMessage = (error as Error)?.message;
-        vscode.window.showErrorMessage('Failed to generate step definitions!', errorMessage);
+        showErrorMessageWithDetail('Failed to generate step definitions!', error);
     }
 };

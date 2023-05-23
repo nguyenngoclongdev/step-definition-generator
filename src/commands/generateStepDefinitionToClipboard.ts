@@ -2,7 +2,7 @@ import { GherkinCodeParse } from '@nguyenngoclongdev/gherkin';
 import { readFileSync } from 'fs';
 import * as vscode from 'vscode';
 import { ExtensionConfiguration } from '../extension';
-import { getFeatureFilePath, getLanguage, getRunner } from '../utils';
+import { getFeatureFilePath, getLanguage, getRunner, showErrorMessageWithDetail } from '../utils';
 
 export const generateStepDefinitionToClipboard = async (uri: vscode.Uri, config: ExtensionConfiguration): Promise<void> => {
     try {
@@ -28,7 +28,6 @@ export const generateStepDefinitionToClipboard = async (uri: vscode.Uri, config:
         await clipboard.writeText(output);
         vscode.window.showInformationMessage('Step definitions have been copied to the clipboard!');
     } catch (error) {
-        const errorMessage = (error as Error)?.message;
-        vscode.window.showErrorMessage('Failed to generate step definitions!', errorMessage);
+        showErrorMessageWithDetail('Failed to generate step definitions!', error);
     }
 };

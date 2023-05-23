@@ -38,6 +38,16 @@ export const getLanguageExt = (language: SupportedLanguage): string => {
     }
 };
 
+export const showErrorMessageWithDetail = (message: string, error: unknown): void => {
+    const detailError = error instanceof Error ? (error as Error)?.message : `${error}`;
+    vscode.window.showErrorMessage(message, 'View Error')
+        .then((selection) => {
+            if (selection === 'View Error') {
+                vscode.window.showErrorMessage(detailError, { modal: true });
+            }
+        });
+};
+
 const getActiveTextEditor = (): TextEditor => {
     return vscode.window.activeTextEditor as TextEditor;
 };
