@@ -46,6 +46,7 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 # Features
 
 -   [Cucumber Step Definition Generator](#using-the-extension) offers multiple options to generate step definition.
+-   Automatically opens the generated step definition file and syncs it with the currently opened window if you are in split editor mode. This saves you time and increases efficiency by allowing you to quickly view and edit the generated file.
 -   Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **[Gherkin Syntax](https://cucumber.io/docs/gherkin/)**.
 -   The automatic detection of an asterisk (*) will be defined by a keyword type in the preceding steps.
 -   Additionally, step definition are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
