@@ -10,7 +10,11 @@
 
 This extension is designed to help developers using the testing framework with Gherkin style feature files to generate step definition more easily and efficiently. With just a few clicks, you can automatically generate step definition for your feature files, saving you time and reducing the risk of errors.
 
-This extension is maintained by the [Nguyen Ngoc Long](https://github.com/nguyenngoclongdev/).
+If you find this extension useful for your testing projects, please consider supporting me by [Buy Me a Coffee](https://ko-fi.com/D1D2LBPX9). It's a great way to help me maintain and improve this tool in the future. Your support is truly appreciated!
+
+<a href='https://ko-fi.com/D1D2LBPX9' target='_blank'>
+    <img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee' />
+</a>
 
 # Supported Languages and Frameworks
 
@@ -307,8 +311,6 @@ Then(`I should see the home page with no search results displayed`, () => {
 ```
 
 ## Feedback
-
-I hope you find this extension useful for your testing projects, and I welcome any feedback or contributions to help make it even better.
 
 If you discover a bug, or have a suggestion for a feature request, please
 submit an [issue](https://github.com/nguyenngoclongdev/step-definition-generator/issues).
