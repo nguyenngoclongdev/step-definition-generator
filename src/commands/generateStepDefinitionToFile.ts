@@ -54,6 +54,10 @@ export const generateStepDefinitionToFile = async (uri: vscode.Uri, config: Exte
             }
         });
 
+        // Auto open file after generate step definition
+        const stepDefinitionFileUri = vscode.Uri.file(stepDefinitionFilePath);
+        vscode.window.showTextDocument(stepDefinitionFileUri);
+
         // Show message
         vscode.window.showInformationMessage('Step definitions generated successfully!', 'View Output Path')
             .then((selection) => {
