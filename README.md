@@ -45,11 +45,12 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 
 # Features
 
--   [Cucumber Step Definition Generator](#generate-step-definition) offers multiple options to generate step definition.
--   Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **Gherkin Syntax**.
+-   [Cucumber Step Definition Generator](#using-the-extension) offers multiple options to generate step definition.
+-   Automatically detecting various types of information, such as `DataTable`, `DocString`, `int`, `float`, `string`, and other types of information that are supported by **[Gherkin Syntax](https://cucumber.io/docs/gherkin/)**.
+-   The automatic detection of an asterisk (*) will be defined by a keyword type in the preceding steps.
 -   Additionally, step definition are de-duplicated when regenerating code, ensuring they remain organized and efficient, even when making changes to your testing scenario.
 
-## Using the extension
+## Using the extension 
 
 ![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-in-editor.gif)
 
