@@ -53,7 +53,7 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 
 ## Using the extension 
 
-![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-in-editor.gif)
+![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-from-editor-title.gif)
 
 You have multiple options when it comes to generating step definition using this extension:
 
@@ -67,7 +67,7 @@ You have multiple options when it comes to generating step definition using this
 2. Right click on the editor and select `Generate step definition to file`
 3. If the file for the step definition doesn't exist, the extension will create it. Otherwise, if the file already exists, the extension will simply append the new step definition to the end of the existing file.
 
-![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-in-explorer.gif)
+![Generate step definition](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/generate-step-definition-in-editor.gif)
 
 ### Generate a step definition and copy to clipboard
 
