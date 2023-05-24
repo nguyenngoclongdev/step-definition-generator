@@ -17,5 +17,9 @@
     "prettier.trailingComma": "none",
     "[feature]": {
         "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
-    }
+    },
+    "[svg]": {
+        "editor.defaultFormatter": "jock.svg"
+    },
+    "svg.preview.background": "editor"
 }

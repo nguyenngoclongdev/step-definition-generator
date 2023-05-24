@@ -37,12 +37,20 @@
             {
                 "when": "resourceLangId == feature",
                 "command": "step-definition-generator.generateStepDefinitionToClipboard",
-                "title": "Generate step definition to clipboard"
+                "title": "Generate step definition to clipboard",
+                "icon": {
+                    "light": "assets/light/files.svg",
+                    "dark": "assets/dark/files.svg"
+                }
             },
             {
                 "when": "resourceLangId == feature",
                 "command": "step-definition-generator.generateStepDefinitionToFile",
-                "title": "Generate step definition to file"
+                "title": "Generate step definition to file",
+                "icon": {
+                    "light": "assets/light/go-to-file.svg",
+                    "dark": "assets/dark/go-to-file.svg"
+                }
             }
         ],
         "menus": {
@@ -69,10 +77,24 @@
                     "command": "step-definition-generator.generateStepDefinitionToFile",
                     "title": "Generate step definition to file"
                 }
+            ],
+            "editor/title": [
+                {
+                    "when": "!inQuickOpen && !inMenuBar && !inPanel && (resourceExtname == .feature || resourceExtname == .features)",
+                    "command": "step-definition-generator.generateStepDefinitionToClipboard",
+                    "title": "Generate step definition to clipboard",
+                    "group": "navigation@-1001"
+                },
+                {
+                    "when": "!inQuickOpen && !inMenuBar && !inPanel && (resourceExtname == .feature || resourceExtname == .features)",
+                    "command": "step-definition-generator.generateStepDefinitionToFile",
+                    "title": "Generate step definition to file",
+                    "group": "navigation@-1002"
+                }
             ]
         },
         "configuration": {
-            "title": "step-definition-generator",
+            "title": "Step Definition Generator",
             "properties": {
                 "step-definition-generator.runner": {
                     "type": "string",
