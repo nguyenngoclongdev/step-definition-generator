@@ -3,6 +3,9 @@ name: Release to marketplace
 on:
     push:
         branches: [release/*]
+    release:
+        types:
+            - created
 
 jobs:
     publish-marketplace:
