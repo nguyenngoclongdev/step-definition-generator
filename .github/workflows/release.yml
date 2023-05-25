@@ -1,0 +1,30 @@
+name: Release to marketplace
+
+on:
+    push:
+        branches: [release/*]
+
+jobs:
+    publish-marketplace:
+        name: Release to marketplace
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16.x
+                  registry-url: https://registry.npmjs.org/
+            - name: Configure PAT credentials
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: echo "@nguyenngoclongdev:registry=https://npm.pkg.github.com/" > .npmrc && echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+            - run: yarn install
+            - name: Publish to Visual Studio Marketplace
+              uses: HaaLeo/publish-vscode-extension@v1
+              with:
+                  pat: ${{ secrets.VSCE_PAT }}
+                  registryUrl: https://marketplace.visualstudio.com
+            - name: Publish to Open VSX Registry
+              uses: HaaLeo/publish-vscode-extension@v1
+              with:
+                  pat: ${{ secrets.OPEN_VSX_TOKEN }}

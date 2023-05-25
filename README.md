@@ -57,9 +57,9 @@ Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/ite
 
 You have multiple options when it comes to generating step definition using this extension:
 
--   The extension can generate the step definition and automatically create a new file for it.
--   The extension can generate the step definition and copy it to the clipboard for easy access.
--   Alternatively, you can use the Command Palette to generate step definition directly from within the extension.
+-   The extension can automatically create a new file for the step definition when you generate it. To do this, you can either right-click on the feature file or click an icon in the Editor Actions menu.
+-   The extension can also generate the step definition and copy it to the clipboard, which makes it easy to access and paste into the appropriate file. To use this option, you can again right-click on the feature file or click an icon in the Editor Actions menu.
+-   Finally, you can use the Command Palette within the extension to generate step definitions directly. This method may be particularly useful if you prefer to use keyboard shortcuts or if you're working with a particularly large or complex test file.
 
 ### Generate a step definition and create a new file
 
