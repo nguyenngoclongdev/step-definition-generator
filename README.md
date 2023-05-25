@@ -41,7 +41,7 @@ If you find this extension useful for your testing projects, please consider sup
 
 # Installation
 
-Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator).
+Get it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator) or [Open VSX Registry](https://open-vsx.org/extension/nguyenngoclong/cypress-cucumber-step-definition-generator).
 
 # Features
 
