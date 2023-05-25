@@ -1,4 +1,4 @@
-[![CI](https://github.com/nguyenngoclongdev/step-definition-generator/actions/workflows/pipelines.yml/badge.svg)](https://github.com/nguyenngoclongdev/step-definition-generator/actions/workflows/pipelines.yml)
+[![CI](https://github.com/nguyenngoclongdev/step-definition-generator/actions/workflows/release.yml/badge.svg)](https://github.com/nguyenngoclongdev/step-definition-generator/actions/workflows/release.yml)
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/nguyenngoclong.cypress-cucumber-step-definition-generator)](https://marketplace.visualstudio.com/items?itemName=nguyenngoclong.cypress-cucumber-step-definition-generator)
