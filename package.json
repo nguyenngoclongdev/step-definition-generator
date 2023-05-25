@@ -39,8 +39,8 @@
                 "command": "step-definition-generator.generateStepDefinitionToClipboard",
                 "title": "Generate step definition to clipboard",
                 "icon": {
-                    "light": "assets/light/files.svg",
-                    "dark": "assets/dark/files.svg"
+                    "light": "assets/light/clipboard.svg",
+                    "dark": "assets/dark/clipboard.svg"
                 }
             },
             {
@@ -48,8 +48,8 @@
                 "command": "step-definition-generator.generateStepDefinitionToFile",
                 "title": "Generate step definition to file",
                 "icon": {
-                    "light": "assets/light/go-to-file.svg",
-                    "dark": "assets/dark/go-to-file.svg"
+                    "light": "assets/light/flower.svg",
+                    "dark": "assets/dark/flower.svg"
                 }
             }
         ],
