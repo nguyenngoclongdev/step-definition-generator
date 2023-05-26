@@ -7,6 +7,8 @@ export const SUPPORTED_FEATURE_FILE = ["feature", "features"];
 export interface ExtensionConfiguration extends WorkspaceConfiguration {
     runner?: string;
     language?: string;
+    arrow: boolean;
+    async: boolean;
 }
 
 export function activate(context: ExtensionContext) {

@@ -3,7 +3,7 @@
     "displayName": "Cucumber Step Definition Generator ",
     "description": "Generate step definition for multiple frameworks, such as Cypress, Playwright, and Cucumberjs. Powered by Gherkin Syntax.",
     "icon": "assets/logo.png",
-    "version": "2.1.9",
+    "version": "2.2.0",
     "main": "./dist/extension.js",
     "preview": false,
     "repository": {
@@ -110,7 +110,7 @@
                         "playwright",
                         "cucumberjs"
                     ],
-                    "description": "BDD Testing Framework"
+                    "description": "The programing framework used for step deinitions"
                 },
                 "step-definition-generator.language": {
                     "type": "string",
@@ -119,7 +119,17 @@
                         "javascript",
                         "typescript"
                     ],
-                    "description": "The language of step deinitions"
+                    "description": "The programing language used for step deinitions"
+                },
+                "step-definition-generator.arrow": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Generate step definitions using either arrow or regular functions."
+                },
+                "step-definition-generator.async": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Generate step definitions using either async or sync functions."
                 }
             }
         }
@@ -158,7 +168,7 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "@nguyenngoclongdev/gherkin": "1.3.0"
+        "@nguyenngoclongdev/gherkin": "1.3.1"
     },
     "author": {
         "name": "Nguyen Ngoc Long",

@@ -199,10 +199,10 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@nguyenngoclongdev/gherkin@1.3.0":
-  version "1.3.0"
-  resolved "https://npm.pkg.github.com/download/@nguyenngoclongdev/gherkin/1.3.0/b660a3b3aa466d69746ef85406c674e2cedc7e84#b660a3b3aa466d69746ef85406c674e2cedc7e84"
-  integrity sha512-IdJfJ5uEb0fZdUfpdZXV3CKLhNPQTxZiChPBO0tFCOHBe6uI8Wq5TmfLpGv9pEztUAGQaJ01G6rfNnHnr/NhOw==
+"@nguyenngoclongdev/gherkin@1.3.1":
+  version "1.3.1"
+  resolved "https://npm.pkg.github.com/download/@nguyenngoclongdev/gherkin/1.3.1/cf393c0eb5c05819a8cd452f231f995fc637dcbb#cf393c0eb5c05819a8cd452f231f995fc637dcbb"
+  integrity sha512-7XWzOttdoRdH3pAlpinb+VygNPMhGadx6u6QOwKjbWnb7HUyxIz+vFYeJpqyMGCSinKvqQEYhBnM4McMbZPiVA==
   dependencies:
     "@cucumber/cucumber-expressions" "^16.1.2"
     "@cucumber/gherkin" "^26.2.0"
@@ -272,10 +272,10 @@
   resolved "https://registry.npmjs.org/@types/uuid/-/uuid-9.0.1.tgz"
   integrity sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==
 
-"@types/vscode@^1.78.0":
-  version "1.78.0"
-  resolved "https://registry.npmjs.org/@types/vscode/-/vscode-1.78.0.tgz"
-  integrity sha512-LJZIJpPvKJ0HVQDqfOy6W4sNKUBBwyDu1Bs8chHBZOe9MNuKTJtidgZ2bqjhmmWpUb0TIIqv47BFUcVmAsgaVA==
+"@types/vscode@^1.60.0":
+  version "1.78.1"
+  resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.78.1.tgz#027dba038c9e4c3f8e83570e1494aab679030485"
+  integrity sha512-wEA+54axejHu7DhcUfnFBan1IqFD1gBDxAFz8LoX06NbNDMRJv/T6OGthOs52yZccasKfN588EyffHWABkR0fg==
 
 "@typescript-eslint/eslint-plugin@^5.59.5":
   version "5.59.5"

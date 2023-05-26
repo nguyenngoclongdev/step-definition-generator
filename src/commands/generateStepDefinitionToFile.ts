@@ -1,4 +1,4 @@
-import { GherkinCodeParse } from '@nguyenngoclongdev/gherkin';
+import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@nguyenngoclongdev/gherkin';
 import { Uri, window, workspace } from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner, showErrorMessageWithDetail } from '../utils/utils';
@@ -40,15 +40,18 @@ export const generateStepDefinitionToFileAsync = async (uri: Uri, config: Extens
         // Get feature content
         const featureFileContent = await wfs.readFileAsync(featureFilePath);
 
+        // Init gherkin option
+        const gherkinOptions: GherkinOption = { ...defaultGherkinOption, ...{ arrow: config.arrow, async: config.async } };
+
         // Generate code
         let stepDefinitionOutput = "";
         const gherkinCodeParse = new GherkinCodeParse(runner, language);
         const isRegenerateStepDefinition = await wfs.existAsync(stepDefinitionFilePath);
         if (isRegenerateStepDefinition) {
-            const stepDefinitionFileContent = await wfs.readFileAsync(stepDefinitionFilePath);
-            stepDefinitionOutput = gherkinCodeParse.parse(featureFileContent, stepDefinitionFileContent);
+            gherkinOptions.previous = await wfs.readFileAsync(stepDefinitionFilePath);
+            stepDefinitionOutput = gherkinCodeParse.parse(featureFileContent, gherkinOptions);
         } else {
-            stepDefinitionOutput = gherkinCodeParse.parse(featureFileContent);
+            stepDefinitionOutput = gherkinCodeParse.parse(featureFileContent, gherkinOptions);
         }
 
         // Check the output content

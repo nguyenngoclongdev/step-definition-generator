@@ -88,27 +88,25 @@ You have multiple options when it comes to generating step definition using this
 
 ![Configuration](https://github.com/nguyenngoclongdev/step-definition-generator/raw/HEAD/images/step-definition-generator-configuration.gif)
 
-### Change the default language
+### Change the settings
 
-1. Open settings and search for "step-definition-generator.language"
-2. Set the value to "javascript" or "typescript"
-3. Save the settings
-
-```json
-{
-    "step-definition-generator.language": "typescript"
-}
-```
-
-### Change the testing framework
-
-1. Open settings and search for "step-definition-generator.runner"
-2. Set the value to "cypress", "playwright", or "cucumberjs"
-3. Save the settings
+1. Access the settings and search for "Step Definition Generator".
+2. Modify the desired setting value.
+3. Save the updated settings.
 
 ```json
 {
-    "step-definition-generator.runner": "cypress"
+    // Change the programing framework used for step deinitions
+    "step-definition-generator.runner": "cypress",
+
+    // Change the programing language used for step deinitions
+    "step-definition-generator.language": "typescript",
+
+    // Choose to generate step definitions using either arrow or regular functions.
+    "step-definition-generator.arrow": true,
+
+    // Choose to generate step definitions using either async or sync functions.
+    "step-definition-generator.async": false
 }
 ```
 

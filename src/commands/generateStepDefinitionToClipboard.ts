@@ -1,4 +1,4 @@
-import { GherkinCodeParse } from '@nguyenngoclongdev/gherkin';
+import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@nguyenngoclongdev/gherkin';
 import { Uri, env, window } from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getRunner, showErrorMessageWithDetail } from '../utils/utils';
@@ -19,9 +19,12 @@ export const generateStepDefinitionToClipboardAsync = async (uri: Uri, config: E
         // Get feature content
         const featureFileContent = await wfs.readFileAsync(featureFilePath);
 
+        // Init gherkin option
+        const gherkinOptions: GherkinOption = { ...defaultGherkinOption, ...{ arrow: config.arrow, async: config.async } };
+
         // Generate code
         const gherkinCodeParse = new GherkinCodeParse(runner, language);
-        const output = gherkinCodeParse.parse(featureFileContent);
+        const output = gherkinCodeParse.parse(featureFileContent, gherkinOptions);
 
         // Write to clipboard
         const clipboard = env.clipboard;
