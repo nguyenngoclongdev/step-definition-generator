@@ -21,10 +21,6 @@
         "Testing",
         "Other"
     ],
-    "galleryBanner": {
-        "color": "#8647ae",
-        "theme": "dark"
-    },
     "keywords": [
         "cypress",
         "cucumber",
