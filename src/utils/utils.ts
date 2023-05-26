@@ -1,7 +1,6 @@
 import { SupportedLanguage, SupportedRunner } from "@nguyenngoclongdev/gherkin";
-import * as vscode from 'vscode';
-import { TextEditor } from 'vscode';
-import { SUPPORTED_FEATURE_FILE } from "./extension";
+import { TextEditor, Uri, window } from 'vscode';
+import { SUPPORTED_FEATURE_FILE } from "../extension";
 
 export const getRunner = (runner: string | undefined): SupportedRunner => {
     switch (runner?.toLowerCase()) {
@@ -40,19 +39,19 @@ export const getLanguageExt = (language: SupportedLanguage): string => {
 
 export const showErrorMessageWithDetail = (message: string, error: unknown): void => {
     const detailError = error instanceof Error ? (error as Error)?.message : `${error}`;
-    vscode.window.showErrorMessage(message, 'View Error')
+    window.showErrorMessage(message, 'View Error')
         .then((selection) => {
             if (selection === 'View Error') {
-                vscode.window.showErrorMessage(detailError, { modal: true });
+                window.showErrorMessage(detailError, { modal: true });
             }
         });
 };
 
 const getActiveTextEditor = (): TextEditor => {
-    return vscode.window.activeTextEditor as TextEditor;
+    return window.activeTextEditor as TextEditor;
 };
 
-export const getFeatureFilePath = (uri: vscode.Uri): string | undefined => {
+export const getFeatureFilePath = (uri: Uri): string | undefined => {
     // If user select from explorer context, get file content from explorer context
     const featureFileFromExplorer = uri?.fsPath;
     if (featureFileFromExplorer) {
