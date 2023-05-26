@@ -12,12 +12,10 @@ export interface ExtensionConfiguration extends WorkspaceConfiguration {
 }
 
 export function activate(context: ExtensionContext) {
-    // Get configuration for extensions
-    const config = workspace.getConfiguration('step-definition-generator') as ExtensionConfiguration;
-
     // Generate step definition to clipboard
     context.subscriptions.push(
         commands.registerCommand('step-definition-generator.generateStepDefinitionToClipboard', async (uri: Uri) => {
+            const config = workspace.getConfiguration('step-definition-generator') as ExtensionConfiguration;
             await generateStepDefinitionToClipboardAsync(uri, config);
         })
     );
@@ -25,6 +23,7 @@ export function activate(context: ExtensionContext) {
     // Generate step definition to file
     context.subscriptions.push(
         commands.registerCommand('step-definition-generator.generateStepDefinitionToFile', async (uri: Uri) => {
+            const config = workspace.getConfiguration('step-definition-generator') as ExtensionConfiguration;
             await generateStepDefinitionToFileAsync(uri, config);
         })
     );
