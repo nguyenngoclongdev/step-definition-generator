@@ -140,7 +140,6 @@
         "watch": "tsc -watch -p ./",
         "lint": "eslint src --ext ts",
         "test": "eslint src --ext ts",
-        "deploy": "vsce publish --yarn",
         "prebump": "yarn test",
         "bump": "yarn version --patch",
         "postbump": "git push --tags",
@@ -155,6 +154,7 @@
         "onStartupFinished"
     ],
     "devDependencies": {
+        "@changesets/cli": "^2.26.1",
         "@types/glob": "^8.1.0",
         "@types/mocha": "^10.0.1",
         "@types/node": "^20.1.4",

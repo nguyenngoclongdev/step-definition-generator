@@ -2,12 +2,16 @@ name: CI
 
 on:
     push:
-        tags:
-            - 'v*.*.*'
+        branches:
+            - main
+
+permissions:
+    packages: write # publish package
+    contents: write # to create release (changesets/action)
+    pull-requests: write # to create pull request (changesets/action)
 
 jobs:
-    publish-marketplace:
-        name: Release to marketplace
+    publish:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -15,36 +19,34 @@ jobs:
               with:
                   node-version: 16.x
                   registry-url: https://registry.npmjs.org/
-            - name: Read package.json
-              id: package
-              uses: jaywcjlove/github-action-package@main
             - name: Configure PAT credentials
+              run: |
+                  cat << EOF > "$HOME/.npmrc"
+                    always-auth=true
+                    @nguyenngoclongdev:registry=https://npm.pkg.github.com/
+                    //npm.pkg.github.com/:_authToken=$NPM_TOKEN
+                  EOF
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-              run: echo "@nguyenngoclongdev:registry=https://npm.pkg.github.com/" > .npmrc && echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
-            - run: yarn install
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: Install dependency
+              run: yarn install --frozen-lockfile
+            - name: Check style and format
+              run: yarn lint
+            - name: Test package before publish
+              run: yarn test
+            - name: Create Release Pull Request or publish package
+              id: changesets
+              uses: changesets/action@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: Publish to Visual Studio Marketplace
-              id: ms_vsx
+              if: steps.changesets.outputs.hasChangesets == 'false'
               uses: HaaLeo/publish-vscode-extension@v1
               with:
                   pat: ${{ secrets.VSCE_PAT }}
                   registryUrl: https://marketplace.visualstudio.com
             - name: Publish to Open VSX Registry
-              id: open_vsx
+              if: steps.changesets.outputs.hasChangesets == 'false'
               uses: HaaLeo/publish-vscode-extension@v1
               with:
                   pat: ${{ secrets.OPEN_VSX_TOKEN }}
-            - name: Generate Changelog
-              id: build_changelog
-              uses: mikepenz/release-changelog-builder-action@v3
-            - name: Create release note
-              uses: softprops/action-gh-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  tag_name: ${{ github.ref }}
-                  name: v${{ steps.package.outputs.version }}
-                  body: ${{ steps.build_changelog.outputs.changelog }}
-                  draft: false
-                  prerelease: false
-                  files: ${{ steps.ms_vsx.outputs.vsixPath }}
