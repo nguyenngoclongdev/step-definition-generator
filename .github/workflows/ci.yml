@@ -40,13 +40,13 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: Publish to Visual Studio Marketplace
-              if: steps.changesets.outputs.hasChangesets == 'false'
+              if: steps.changesets.outputs.hasChangesets == 'true'
               uses: HaaLeo/publish-vscode-extension@v1
               with:
                   pat: ${{ secrets.VSCE_PAT }}
                   registryUrl: https://marketplace.visualstudio.com
             - name: Publish to Open VSX Registry
-              if: steps.changesets.outputs.hasChangesets == 'false'
+              if: steps.changesets.outputs.hasChangesets == 'true'
               uses: HaaLeo/publish-vscode-extension@v1
               with:
                   pat: ${{ secrets.OPEN_VSX_TOKEN }}
