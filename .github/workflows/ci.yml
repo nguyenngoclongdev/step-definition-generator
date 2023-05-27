@@ -15,10 +15,9 @@ jobs:
               with:
                   node-version: 16.x
                   registry-url: https://registry.npmjs.org/
-            - name: Setup Environment
-              run: node -e "console.log('PACKAGE_VERSION=' + require('./package.json').version + '\nPACKAGE_NAME=' + require('./package.json').name + '-' + require('./package.json').version)" >> $GITHUB_ENV
-            - name: Verify versions
-              run: node -e "if ('refs/tags/v' + '${{ env.PACKAGE_VERSION }}' !== '${{ github.ref }}') { console.log('::error' + 'Version Mismatch. refs/tags/v' + '${{ env.PACKAGE_VERSION }}', '${{ github.ref }}'); throw Error('Version Mismatch')} "
+            - name: Read package.json
+              id: package
+              uses: jaywcjlove/github-action-package@main
             - name: Configure PAT credentials
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -34,20 +33,16 @@ jobs:
               with:
                   pat: ${{ secrets.OPEN_VSX_TOKEN }}
             - name: Generate Changelog
-              id: changelog
-              uses: mindsers/changelog-reader-action@v2
-              with:
-                  version: ${{ env.PACKAGE_VERSION }}
-                  path: ./CHANGELOG.md
-            - name: Create GitHub release
-              id: create_release
+              id: build_changelog
+              uses: mikepenz/release-changelog-builder-action@v3
+            - name: Create release note
               uses: softprops/action-gh-release@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   tag_name: ${{ github.ref }}
-                  name: v${{ env.PACKAGE_VERSION }}
-                  body: ${{ steps.changelog.outputs.changes }}
+                  name: v${{ steps.package.outputs.version }}
+                  body: ${{ steps.build_changelog.outputs.changelog }}
                   draft: false
                   prerelease: false
-                  files: ./${{ env.PACKAGE_NAME }}.vsix
+                  files: ./${{ steps.package.outputs.name }}.vsix
