@@ -21,5 +21,8 @@
     "[svg]": {
         "editor.defaultFormatter": "jock.svg"
     },
-    "svg.preview.background": "editor"
+    "svg.preview.background": "editor",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false
 }
