@@ -24,11 +24,13 @@ jobs:
               run: echo "@nguyenngoclongdev:registry=https://npm.pkg.github.com/" > .npmrc && echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
             - run: yarn install
             - name: Publish to Visual Studio Marketplace
+              id: ms_vsx
               uses: HaaLeo/publish-vscode-extension@v1
               with:
                   pat: ${{ secrets.VSCE_PAT }}
                   registryUrl: https://marketplace.visualstudio.com
             - name: Publish to Open VSX Registry
+              id: open_vsx
               uses: HaaLeo/publish-vscode-extension@v1
               with:
                   pat: ${{ secrets.OPEN_VSX_TOKEN }}
@@ -45,4 +47,4 @@ jobs:
                   body: ${{ steps.build_changelog.outputs.changelog }}
                   draft: false
                   prerelease: false
-                  files: ./${{ steps.package.outputs.name }}.vsix
+                  files: ${{ steps.ms_vsx.outputs.vsixPath }}
