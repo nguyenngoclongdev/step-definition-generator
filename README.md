@@ -96,7 +96,7 @@ You have multiple options when it comes to generating step definition using this
 
 ```json
 {
-    // Change the programing framework used for step deinitions
+    // Change the testing framework used for step deinitions
     "step-definition-generator.runner": "cypress",
 
     // Change the programing language used for step deinitions

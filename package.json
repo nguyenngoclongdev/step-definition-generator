@@ -110,7 +110,7 @@
                         "playwright",
                         "cucumberjs"
                     ],
-                    "description": "The programing framework used for step deinitions"
+                    "description": "The testing framework used for step deinitions"
                 },
                 "step-definition-generator.language": {
                     "type": "string",
