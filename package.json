@@ -30,9 +30,9 @@
         "step",
         "definition",
         "feature",
+        "features",
         "gherkin",
-        "playwright",
-        "syntax"
+        "playwright"
     ],
     "contributes": {
         "commands": [
@@ -166,7 +166,7 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "@nguyenngoclongdev/gherkin": "1.3.1"
+        "@nguyenngoclongdev/gherkin": "1.3.8"
     },
     "author": {
         "name": "Nguyen Ngoc Long",

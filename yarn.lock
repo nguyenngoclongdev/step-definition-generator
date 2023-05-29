@@ -449,10 +449,10 @@
     globby "^11.0.0"
     read-yaml-file "^1.1.0"
 
-"@nguyenngoclongdev/gherkin@1.3.1":
-  version "1.3.1"
-  resolved "https://npm.pkg.github.com/download/@nguyenngoclongdev/gherkin/1.3.1/cf393c0eb5c05819a8cd452f231f995fc637dcbb#cf393c0eb5c05819a8cd452f231f995fc637dcbb"
-  integrity sha512-7XWzOttdoRdH3pAlpinb+VygNPMhGadx6u6QOwKjbWnb7HUyxIz+vFYeJpqyMGCSinKvqQEYhBnM4McMbZPiVA==
+"@nguyenngoclongdev/gherkin@1.3.8":
+  version "1.3.8"
+  resolved "https://npm.pkg.github.com/download/@nguyenngoclongdev/gherkin/1.3.8/606723a4a3c7fc1a207ea7d1ff63bd2d6dc1df9a#606723a4a3c7fc1a207ea7d1ff63bd2d6dc1df9a"
+  integrity sha512-Gu9MuPaDgaAMpfEIPDq0mm10eT6sdkRhyue30qMesvt1LeTElA/wCXoYmQXw6SQBjjJgq7uKRzfYxv9lfdBwXA==
   dependencies:
     "@cucumber/cucumber-expressions" "^16.1.2"
     "@cucumber/gherkin" "^26.2.0"
