@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.10
+
+### Patch Changes
+
+- 656fa13: matching previous code correctly
+
 ## 2.2.11
 
 ### Patch Changes
