@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.11
+
+### Patch Changes
+
+- bf4d8f5: revert changes
+
 ## 2.2.10
 
 ### Patch Changes
