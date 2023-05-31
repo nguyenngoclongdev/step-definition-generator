@@ -5,6 +5,7 @@
     "icon": "assets/logo.png",
     "version": "2.2.12",
     "main": "./dist/extension.js",
+    "browser": "./dist/web/extension.js",
     "preview": false,
     "repository": {
         "type": "git",
@@ -135,11 +136,10 @@
         }
     },
     "scripts": {
-        "preinstall": "npx only-allow yarn",
-        "vscode:prepublish": "yarn esbuild-base --minify",
+        "vscode:prepublish": "npm run esbuild-base -- --minify && npm run compile-web -- --mode production --devtool false",
         "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
-        "esbuild": "yarn esbuild-base --sourcemap",
-        "esbuild-watch": "yarn esbuild-base --sourcemap --watch",
+        "esbuild": "npm run esbuild-base -- --sourcemap",
+        "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "lint": "eslint src --ext ts",
@@ -147,7 +147,9 @@
         "cs": "changeset",
         "pree2e": "code --uninstall-extension nguyenngoclong.cypress-cucumber-step-definition-generator || true",
         "e2e": "vsce package -o ./cypress-cucumber-step-definition-generator.vsix",
-        "poste2e": "code --install-extension ./cypress-cucumber-step-definition-generator.vsix"
+        "poste2e": "code --install-extension ./cypress-cucumber-step-definition-generator.vsix",
+        "compile-web": "webpack",
+        "watch-web": "webpack --watch"
     },
     "engines": {
         "vscode": "^1.60.0"
@@ -159,15 +161,26 @@
         "@changesets/cli": "^2.26.1",
         "@types/glob": "^8.1.0",
         "@types/mocha": "^10.0.1",
-        "@types/node": "^20.1.4",
-        "@types/vscode": "^1.60.0",
-        "@typescript-eslint/eslint-plugin": "^5.59.5",
-        "@typescript-eslint/parser": "^5.59.5",
+        "@types/node": "^20.2.5",
+        "@types/vscode": "1.60.0",
+        "@types/webpack-env": "^1.18.1",
+        "@typescript-eslint/eslint-plugin": "^5.59.8",
+        "@typescript-eslint/parser": "^5.59.8",
+        "assert": "^2.0.0",
+        "buffer": "^6.0.3",
+        "crypto-browserify": "^3.12.0",
         "esbuild": "^0.17.19",
-        "eslint": "^8.40.0",
-        "glob": "^10.2.3",
+        "eslint": "^8.41.0",
+        "glob": "^10.2.6",
         "mocha": "^10.2.0",
-        "typescript": "^5.0.4"
+        "os-browserify": "^0.3.0",
+        "path-browserify": "^1.0.1",
+        "process": "^0.11.10",
+        "stream-browserify": "^3.0.0",
+        "ts-loader": "^9.4.3",
+        "typescript": "^5.0.4",
+        "webpack": "^5.84.1",
+        "webpack-cli": "^5.1.1"
     },
     "dependencies": {
         "@nguyenngoclongdev/gherkin": "1.3.9"

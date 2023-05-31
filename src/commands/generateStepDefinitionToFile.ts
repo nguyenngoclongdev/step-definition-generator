@@ -3,7 +3,7 @@ import { Uri, window, workspace } from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner, showErrorMessageWithDetail } from '../utils/utils';
 import { wfs } from '../utils/wfs';
-import path = require('path');
+import { posix } from 'path';
 
 const showTextDocument = (stepDefinitionFilePath: string): void => {
     const existingDoc = workspace.textDocuments.find(doc => doc.uri.fsPath === stepDefinitionFilePath);
@@ -33,7 +33,7 @@ export const generateStepDefinitionToFileAsync = async (uri: Uri, config: Extens
         }
 
         // Get step definition file path
-        const featureFileExt = path.parse(featureFilePath).ext;
+        const featureFileExt = posix.extname(featureFilePath);
         const stepDefinitionFileExt = getLanguageExt(language);
         const stepDefinitionFilePath = featureFilePath.slice(0, -featureFileExt.length).concat(stepDefinitionFileExt);
 
@@ -62,7 +62,7 @@ export const generateStepDefinitionToFileAsync = async (uri: Uri, config: Extens
         }
 
         // Write output to file
-        const dirPath = path.dirname(stepDefinitionFilePath);
+        const dirPath = posix.dirname(stepDefinitionFilePath);
         await wfs.createDirectoryAsync(dirPath);
         if (isRegenerateStepDefinition) {
             await wfs.appendFileAsync(stepDefinitionFilePath, stepDefinitionOutput);

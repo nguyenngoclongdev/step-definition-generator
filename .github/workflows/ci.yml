@@ -32,13 +32,13 @@ jobs:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Install dependency
-              run: yarn install --frozen-lockfile
+              run: npm ci
 
             - name: Check style and format
-              run: yarn lint
+              run: npm run lint
 
             - name: Test package before publish
-              run: yarn test
+              run: npm run test
 
             - name: Create Release Pull Request or publish package
               id: changesets
