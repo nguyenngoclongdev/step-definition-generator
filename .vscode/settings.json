@@ -15,13 +15,6 @@
     "prettier.tabWidth": 4,
     "prettier.printWidth": 120,
     "prettier.trailingComma": "none",
-    "[feature]": {
-        "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
-    },
-    "[svg]": {
-        "editor.defaultFormatter": "jock.svg"
-    },
-    "svg.preview.background": "editor",
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false
