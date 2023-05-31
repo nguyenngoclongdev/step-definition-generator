@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.12
+
+### Patch Changes
+
+- 4bcc8f9: bump version
+
 ## 2.2.11
 
 ### Patch Changes
