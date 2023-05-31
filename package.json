@@ -99,6 +99,7 @@
             "title": "Step Definition Generator",
             "properties": {
                 "step-definition-generator.runner": {
+                    "order": 1,
                     "type": "string",
                     "default": "cypress",
                     "enum": [
@@ -109,6 +110,7 @@
                     "description": "The testing framework used for step deinitions"
                 },
                 "step-definition-generator.language": {
+                    "order": 2,
                     "type": "string",
                     "default": "typescript",
                     "enum": [
@@ -118,11 +120,13 @@
                     "description": "The programing language used for step deinitions"
                 },
                 "step-definition-generator.arrow": {
+                    "order": 3,
                     "type": "boolean",
                     "default": true,
                     "description": "Generate step definitions using either arrow or regular functions."
                 },
                 "step-definition-generator.async": {
+                    "order": 4,
                     "type": "boolean",
                     "default": false,
                     "description": "Generate step definitions using either async or sync functions."
