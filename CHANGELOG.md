@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.13
+
+### Patch Changes
+
+- 02fe35a: update README to add open-vsx badge
+
 ## 2.2.12
 
 ### Patch Changes
