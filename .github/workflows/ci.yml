@@ -16,23 +16,17 @@ jobs:
               with:
                   # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
                   fetch-depth: 0
+
             - uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-                  registry-url: https://registry.npmjs.org/
-
-            - name: Configure PAT credentials
-              run: |
-                  cat << EOF > "$HOME/.npmrc"
-                    always-auth=true
-                    @nguyenngoclongdev:registry=https://npm.pkg.github.com/
-                    //npm.pkg.github.com/:_authToken=$NPM_TOKEN
-                  EOF
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  registry-url: https://npm.pkg.github.com/
+                  scope: '@nguyenngoclongdev'
 
             - name: Install dependency
               run: npm ci
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Check style and format
               run: npm run lint
