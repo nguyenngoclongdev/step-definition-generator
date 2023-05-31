@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.14
+
+### Patch Changes
+
+- fd30ba4: support web extensions (vscode.dev)
+
 ## 2.2.13
 
 ### Patch Changes
