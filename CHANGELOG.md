@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.15
+
+### Patch Changes
+
+- ec8b67e: Publish web extension version
+
 ## 2.2.14
 
 ### Patch Changes
