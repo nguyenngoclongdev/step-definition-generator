@@ -1,9 +1,9 @@
 import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@nguyenngoclongdev/gherkin';
+import { posix } from 'path';
 import { Uri, window, workspace } from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner, showErrorMessageWithDetail } from '../utils/utils';
 import { wfs } from '../utils/wfs';
-import { posix } from 'path';
 
 const showTextDocument = (stepDefinitionFilePath: string): void => {
     const existingDoc = workspace.textDocuments.find(doc => doc.uri.fsPath === stepDefinitionFilePath);
@@ -39,6 +39,10 @@ export const generateStepDefinitionToFileAsync = async (uri: Uri, config: Extens
 
         // Get feature content
         const featureFileContent = await wfs.readFileAsync(featureFilePath);
+        if (!featureFileContent) {
+            window.showWarningMessage('The feature file is empty!');
+            return;
+        }
 
         // Init gherkin option
         const gherkinOptions: GherkinOption = { ...defaultGherkinOption, ...{ arrow: config.arrow, async: config.async } };

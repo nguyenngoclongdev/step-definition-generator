@@ -20,7 +20,7 @@ class WorkspaceFs {
     readFileAsync = async (path: string) => {
         const uri = Uri.file(path);
         const content = await fs.readFile(uri);
-        return content.toString();
+        return new TextDecoder("utf-8").decode(content);;
     };
 
     appendFileAsync = async (path: string, content: string) => {

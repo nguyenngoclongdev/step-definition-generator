@@ -18,6 +18,10 @@ export const generateStepDefinitionToClipboardAsync = async (uri: Uri, config: E
 
         // Get feature content
         const featureFileContent = await wfs.readFileAsync(featureFilePath);
+        if (!featureFileContent) {
+            window.showWarningMessage('The feature file is empty!');
+            return;
+        }
 
         // Init gherkin option
         const gherkinOptions: GherkinOption = { ...defaultGherkinOption, ...{ arrow: config.arrow, async: config.async } };
