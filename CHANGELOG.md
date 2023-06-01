@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.16
+
+### Patch Changes
+
+- 8b92932: escape previous code before matching with expression
+
 ## 2.2.15
 
 ### Patch Changes
