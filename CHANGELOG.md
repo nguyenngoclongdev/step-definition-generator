@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.18
+
+### Patch Changes
+
+- b935977: decode file content before parse gherkin syntax
+
 ## 2.2.17
 
 ### Patch Changes
