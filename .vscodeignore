@@ -9,3 +9,4 @@ out/
 .vscodeignore
 *.vsix
 tsconfig.json
+.changeset
