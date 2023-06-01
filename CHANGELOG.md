@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.17
+
+### Patch Changes
+
+- af84b81: matching string wrap by ``
+
 ## 2.2.16
 
 ### Patch Changes
