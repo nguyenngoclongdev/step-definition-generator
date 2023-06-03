@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.20
+
+### Patch Changes
+
+- 972c2b9: add develop branch to add new feature
+
 ## 2.2.19
 
 ### Patch Changes
