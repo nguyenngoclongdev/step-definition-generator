@@ -1,4 +1,4 @@
-name: CI
+name: ci
 
 on:
     push:
@@ -13,6 +13,8 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 16.x
+                  cache: 'npm'
+                  always-auth: true
                   registry-url: https://npm.pkg.github.com/
                   scope: '@nguyenngoclongdev'
 
@@ -23,13 +25,13 @@ jobs:
 
             - name: Check style and format
               run: npm run lint
-
             - name: Test package
               uses: coactions/setup-xvfb@v1
               with:
                   run: npm test
 
     publish:
+        needs: [test]
         runs-on: ubuntu-latest
         permissions:
             contents: write # to create release (changesets/action)
@@ -43,6 +45,8 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 16.x
+                  cache: 'npm'
+                  always-auth: true
                   registry-url: https://npm.pkg.github.com/
                   scope: '@nguyenngoclongdev'
 
