@@ -1,12 +1,13 @@
 .github
 .vscode
 images/
+.vscode-test/**
 node_modules
 src/
-out/
 .eslintrc.json
 .gitignore
 .vscodeignore
 *.vsix
 tsconfig.json
 .changeset
+dist/__test__

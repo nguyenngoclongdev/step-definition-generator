@@ -1,0 +1,92 @@
+import { Given, When, Then, DataTable } from '@badeball/cypress-cucumber-preprocessor';
+
+Given(`the minimalism inside a background`, () => {
+    // [Given] Sets up the initial state of the system.
+});
+
+Given(`the minimalism`, () => {
+    // [Given] Sets up the initial state of the system.
+});
+
+Given(`a step`, () => {
+    // [Given] Sets up the initial state of the system.
+});
+
+Given(`a data **table** with a single cell`, (arg0: DataTable) => {
+    // [Given] Sets up the initial state of the system.
+    // <DataTable> argument is detected:
+    // - With column headers: use DataTable.rowsHash(), which outputs an object containing key-value pairs for each row (e.g. { key1: value, key2: value }).
+    // - With row headers: use DataTable.hashes(), which outputs an array of objects (e.g. [{ key1: value, key2: value }]).
+});
+
+Given(`a simple data table`, (arg0: DataTable) => {
+    // [Given] Sets up the initial state of the system.
+    // <DataTable> argument is detected:
+    // - With column headers: use DataTable.rowsHash(), which outputs an object containing key-value pairs for each row (e.g. { key1: value, key2: value }).
+    // - With row headers: use DataTable.hashes(), which outputs an array of objects (e.g. [{ key1: value, key2: value }]).
+});
+
+Given(`a data table with different fromatting`, (arg0: DataTable) => {
+    // [Given] Sets up the initial state of the system.
+    // <DataTable> argument is detected:
+    // - With column headers: use DataTable.rowsHash(), which outputs an object containing key-value pairs for each row (e.g. { key1: value, key2: value }).
+    // - With row headers: use DataTable.hashes(), which outputs an array of objects (e.g. [{ key1: value, key2: value }]).
+});
+
+Given(`a simple DocString`, (arg0: string) => {
+    // [Given] Sets up the initial state of the system.
+    // <DocString> argument is detected:
+    // - DocString allows for passing a multi-line string as an argument.
+    // - It can also be used to provide large amounts of text data, such as JSON or XML payloads.
+});
+
+Given(`the {any}:`, (arg0: any) => {
+    // [Given] Sets up the initial state of the system.
+});
+
+Given(`a {any} ball with:`, (arg0: any) => {
+    // [Given] Sets up the initial state of the system.
+});
+
+Given(`this file:`, (arg0: string) => {
+    // [Given] Sets up the initial state of the system.
+    // <DocString> argument is detected:
+    // - DocString allows for passing a multi-line string as an argument.
+    // - It can also be used to provide large amounts of text data, such as JSON or XML payloads.
+});
+
+When(`I does not have any variable`, () => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have text {string} wrap by quotation marks`, (arg0: string) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have text {string} wrap by punctuation marks`, (arg0: string) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have text {any} wrap by sign mark`, (arg0: any) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have text {string} wrap by quotation and sign mark`, (arg0: string) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have int {int}`, (arg0: number) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have float {float}`, (arg0: number) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have int {int} and float {float}`, (arg0: number, arg1: number) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I have int {int} and float {float}, string {string}`, (arg0: number, arg1: number, arg2: string) => {
+    // [When] Describes the action or event that triggers the scenario.
+});

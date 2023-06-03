@@ -15,6 +15,18 @@
     "prettier.tabWidth": 4,
     "prettier.printWidth": 120,
     "prettier.trailingComma": "none",
+    "prettier.semi": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[feature]": {
+        "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
+    },
+    "files.associations": {
+        "*.feature": "feature",
+        "*.features": "feature",
+        "*.out": "plaintext"
+    },
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false

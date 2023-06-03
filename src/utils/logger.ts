@@ -1,4 +1,4 @@
-import * as util from 'util';
+import util from 'util';
 import { OutputChannel, window } from 'vscode';
 
 /* eslint-disable @typescript-eslint/naming-convention */

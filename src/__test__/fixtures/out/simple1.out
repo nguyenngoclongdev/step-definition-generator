@@ -1,0 +1,25 @@
+import { Given, When, Then, DataTable } from '@badeball/cypress-cucumber-preprocessor';
+
+When(`I enter {string} in the search bar`, (arg0: string) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+When(`I click the search button`, () => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+Then(`I should see a list of products containing {string}`, (arg0: string) => {
+    // [Then] Describes the expected outcome or result of the scenario.
+});
+
+Then(`the total number of results should be {int}`, (arg0: number) => {
+    // [Then] Describes the expected outcome or result of the scenario.
+});
+
+When(`I enter {any} in the search bar`, (arg0: any) => {
+    // [When] Describes the action or event that triggers the scenario.
+});
+
+Then(`I should see an error message`, () => {
+    // [Then] Describes the expected outcome or result of the scenario.
+});
