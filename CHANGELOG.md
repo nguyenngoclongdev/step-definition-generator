@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.19
+
+### Patch Changes
+
+- 10e8db8: testing extension with automation test
+
 ## 2.2.18
 
 ### Patch Changes
