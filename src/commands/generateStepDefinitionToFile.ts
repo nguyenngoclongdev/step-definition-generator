@@ -1,14 +1,14 @@
 import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@nguyenngoclongdev/gherkin';
+import { fs } from '@vscode-utility/fs-browserify';
 import { posix } from 'path';
 import { Uri, window, workspace } from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getLanguageExt, getRunner, showErrorMessageWithDetail } from '../utils/utils';
-import { wfs } from '../utils/wfs';
 
 const showTextDocument = (stepDefinitionFilePath: string): void => {
-    const existingDoc = workspace.textDocuments.find(doc => doc.uri.fsPath === stepDefinitionFilePath);
+    const existingDoc = workspace.textDocuments.find((doc) => doc.uri.fsPath === stepDefinitionFilePath);
     if (existingDoc) {
-        const visibleEditor = window.visibleTextEditors.find(editor => editor.document === existingDoc);
+        const visibleEditor = window.visibleTextEditors.find((editor) => editor.document === existingDoc);
         if (visibleEditor) {
             window.showTextDocument(visibleEditor.document, visibleEditor.viewColumn, false);
         } else {
@@ -38,21 +38,24 @@ export const generateStepDefinitionToFileAsync = async (uri: Uri, config: Extens
         const stepDefinitionFilePath = featureFilePath.slice(0, -featureFileExt.length).concat(stepDefinitionFileExt);
 
         // Get feature content
-        const featureFileContent = await wfs.readFileAsync(featureFilePath);
+        const featureFileContent = await fs.readFileAsync(featureFilePath);
         if (!featureFileContent) {
             window.showWarningMessage('The feature file is empty!');
             return;
         }
 
         // Init gherkin option
-        const gherkinOptions: GherkinOption = { ...defaultGherkinOption, ...{ arrow: config.arrow, async: config.async } };
+        const gherkinOptions: GherkinOption = {
+            ...defaultGherkinOption,
+            ...{ arrow: config.arrow, async: config.async }
+        };
 
         // Generate code
-        let stepDefinitionOutput = "";
+        let stepDefinitionOutput = '';
         const gherkinCodeParse = new GherkinCodeParse(runner, language);
-        const isRegenerateStepDefinition = await wfs.existAsync(stepDefinitionFilePath);
+        const isRegenerateStepDefinition = await fs.existAsync(stepDefinitionFilePath);
         if (isRegenerateStepDefinition) {
-            gherkinOptions.previous = await wfs.readFileAsync(stepDefinitionFilePath);
+            gherkinOptions.previous = await fs.readFileAsync(stepDefinitionFilePath);
             stepDefinitionOutput = gherkinCodeParse.parse(featureFileContent, gherkinOptions);
         } else {
             stepDefinitionOutput = gherkinCodeParse.parse(featureFileContent, gherkinOptions);
@@ -67,18 +70,19 @@ export const generateStepDefinitionToFileAsync = async (uri: Uri, config: Extens
 
         // Write output to file
         const dirPath = posix.dirname(stepDefinitionFilePath);
-        await wfs.createDirectoryAsync(dirPath);
+        await fs.createDirectoryAsync(dirPath);
         if (isRegenerateStepDefinition) {
-            await wfs.appendFileAsync(stepDefinitionFilePath, stepDefinitionOutput);
+            await fs.appendFileAsync(stepDefinitionFilePath, stepDefinitionOutput);
         } else {
-            await wfs.writeFileAsync(stepDefinitionFilePath, stepDefinitionOutput);
+            await fs.writeFileAsync(stepDefinitionFilePath, stepDefinitionOutput);
         }
 
         // Auto open file after generate step definition
         showTextDocument(stepDefinitionFilePath);
 
         // Show message
-        window.showInformationMessage('Step definitions generated successfully!', 'View Output Path')
+        window
+            .showInformationMessage('Step definitions generated successfully!', 'View Output Path')
             .then((selection) => {
                 if (selection === 'View Output Path') {
                     window.showInformationMessage(stepDefinitionFilePath, { modal: true });
