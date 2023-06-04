@@ -7,3 +7,5 @@ node_modules
 temp.*
 **/.DS_Store
 src/__test__/fixtures/*.ts
+pnpm-lock.yaml
+yarn-lock.json
