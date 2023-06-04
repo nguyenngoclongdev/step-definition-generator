@@ -1,10 +1,13 @@
 import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@nguyenngoclongdev/gherkin';
+import { fs } from '@vscode-utility/fs-browserify';
 import { Uri, env, window } from 'vscode';
 import { ExtensionConfiguration } from '../extension';
 import { getFeatureFilePath, getLanguage, getRunner, showErrorMessageWithDetail } from '../utils/utils';
-import { wfs } from '../utils/wfs';
 
-export const generateStepDefinitionToClipboardAsync = async (uri: Uri, config: ExtensionConfiguration): Promise<void> => {
+export const generateStepDefinitionToClipboardAsync = async (
+    uri: Uri,
+    config: ExtensionConfiguration
+): Promise<void> => {
     try {
         const runner = getRunner(config.runner);
         const language = getLanguage(config.language);
@@ -17,14 +20,17 @@ export const generateStepDefinitionToClipboardAsync = async (uri: Uri, config: E
         }
 
         // Get feature content
-        const featureFileContent = await wfs.readFileAsync(featureFilePath);
+        const featureFileContent = await fs.readFileAsync(featureFilePath);
         if (!featureFileContent) {
             window.showWarningMessage('The feature file is empty!');
             return;
         }
 
         // Init gherkin option
-        const gherkinOptions: GherkinOption = { ...defaultGherkinOption, ...{ arrow: config.arrow, async: config.async } };
+        const gherkinOptions: GherkinOption = {
+            ...defaultGherkinOption,
+            ...{ arrow: config.arrow, async: config.async }
+        };
 
         // Generate code
         const gherkinCodeParse = new GherkinCodeParse(runner, language);
