@@ -20,7 +20,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[feature]": {
-        "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
+        "editor.defaultFormatter": "nguyenngoclong.gherkin-editor"
     },
     "files.associations": {
         "*.feature": "feature",
