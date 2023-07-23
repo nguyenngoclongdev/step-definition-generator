@@ -1,5 +1,16 @@
 # Cucumber Step Definition Generator
 
+## 2.2.23
+
+### Patch Changes
+
+- 0d05f2c: update README
+- 0d05f2c: using @vscode-utility/fs-browserify to compatibility between the desktop and web versions of vscode
+- 0d05f2c: add develop branch to add new feature
+- 0d05f2c: reduce bundle size
+- 0d05f2c: update README
+- 0d05f2c: bump dependency version
+
 ## 2.2.22
 
 ### Patch Changes
