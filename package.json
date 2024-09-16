@@ -15,12 +15,19 @@
         "url": "https://github.com/nguyenngoclongdev/step-definition-generator/issues"
     },
     "sponsor": {
-        "url": "https://ko-fi.com/nguyenngoclong"
+        "url": "https://github.com/sponsors/nguyenngoclongdev"
     },
     "homepage": "https://nguyenngoclongdev.github.io",
     "categories": [
         "Testing",
         "Other"
+    ],
+    "badges": [
+        {
+            "url": "https://img.shields.io/badge/Support%20this%20project-%F0%9F%92%96-green.svg?style=flat-square",
+            "href": "https://github.com/sponsors/nguyenngoclongdev",
+            "description": "Support us!"
+        }
     ],
     "keywords": [
         "cypress",
@@ -190,7 +197,7 @@
         "webpack-cli": "^5.1.1"
     },
     "dependencies": {
-        "@nguyenngoclongdev/gherkin": "1.3.13",
+        "@vscode-utility/gherkin": "^1.3.14",
         "@vscode-utility/fs-browserify": "^1.0.4"
     },
     "author": {

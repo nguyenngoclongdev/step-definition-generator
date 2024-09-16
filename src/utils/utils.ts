@@ -1,4 +1,4 @@
-import { SupportedLanguage, SupportedRunner } from "@nguyenngoclongdev/gherkin";
+import { SupportedLanguage, SupportedRunner } from "@vscode-utility/gherkin";
 import { TextEditor, Uri, window } from 'vscode';
 import { SUPPORTED_FEATURE_FILE } from "../extension";
 

@@ -1,4 +1,4 @@
-import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@nguyenngoclongdev/gherkin';
+import { GherkinCodeParse, GherkinOption, defaultGherkinOption } from '@vscode-utility/gherkin';
 import { fs } from '@vscode-utility/fs-browserify';
 import { Uri, env, window } from 'vscode';
 import { ExtensionConfiguration } from '../extension';

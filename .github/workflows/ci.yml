@@ -23,7 +23,7 @@ jobs:
                   cache: 'npm'
                   always-auth: true
                   registry-url: https://npm.pkg.github.com/
-                  scope: '@nguyenngoclongdev'
+                  scope: '@vscode-utility'
 
             - name: Install dependency
               run: npm ci
