@@ -1,5 +1,11 @@
 # Cucumber Step Definition Generator
 
+## 2.2.24
+
+### Patch Changes
+
+- 2e264ea: upgrade the gherkin library
+
 ## 2.2.23
 
 ### Patch Changes
